@@ -1,3 +1,9 @@
+// Мультфильм "Экология моего города"      |
+// Промежуточная контрольная работа курса  |
+// МФТИ 2021                               |
+// Абдулганиева Елена Викторовна           |
+//_________________________________________|
+
 # include "TXlib.h"
 
 void DrawMotorWay      (int x, int y, double sizeX, double sizeY, int width,
@@ -38,7 +44,9 @@ void CarsGo              ();
 
 int main ()
 {
+txBegin ();
 txCreateWindow (800,600);
+
 TextBegin      ();
 GirlsAlong     ();
 TreesGrowing   ();
@@ -48,6 +56,8 @@ BirdsEnd       ();
 CarsGo         ();
 TextEnd        ();
 
+txEnd ();
+return 0;
 }
 void CarsGo ()
 {
@@ -156,8 +166,8 @@ while (x < 50)
       DrawGirl (668 +  2 * x, 168,  1, 1, x % 20, x % 10, TX_GREEN, TX_BLUE , TX_GREEN);
       x ++;
       txSetFillColor (TX_BLACK);
-      txSleep (10);
-      txClear ();
+      txSleep (2);
+      txClear ( );
       }
 }
 
@@ -168,16 +178,17 @@ while (t < 200)
   {
   DrawBlackGround ();
   DrawSun        (500, 50, 1, 1, 10 - t % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+
   txSelectFont   ("Arial", 50 +  t % 3);
   txSetColor     (TX_WHITE);
   txSetFillColor (TX_WHITE);
   txTextOut      (600 - 2 * t,      2 * t, "The environmental ");
   txTextOut      (600 - 2 * t, 50 + 2 * t, "company represents");
+
   t ++;
   txSleep (10);
   txClear ();
   }
-txSleep (200);
 }
 
 void TextEnd ()
@@ -188,12 +199,15 @@ while (t < 600)
   txClear ();
   DrawBlackGroundRoad ();
   DrawSun        (500, 50, 1, 1, 10 - t % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+
   txSelectFont   ("Arial", 50);
   txSetColor     (TX_WHITE);
   txSetFillColor (TX_WHITE);
   txTextOut      (600 - t, 260, "The job is done: Abdulganieva EV");
+
   txSelectFont   ("Arial", 20);
   txTextOut      (650 - t, 315 + t % 5, "welcome to Togliatti");
+
   DrawBird       (550 - t, 350, 1, 1, t % 5, TX_WHITE, TX_ORANGE, TX_WHITE);
   DrawBird       (570 - t, 400, 1, 1, t % 5, TX_WHITE, TX_ORANGE, TX_WHITE);
   DrawBird       (590 - t, 450, 1, 1, t % 5, TX_WHITE, TX_ORANGE, TX_WHITE);
@@ -240,6 +254,7 @@ while (x < 700)
       DrawGirl (  0 + x/4,     100 + x/4,      1, 1, x % 10, x %  5, TX_RED,   TX_GREEN, TX_BLACK);
       DrawGirl (700 - x/2,     600 - x/2,      1, 1, x % 15, x %  7, TX_BLUE,  TX_RED  , TX_BLUE );
       DrawGirl (800 - x*15/80, 300 - x*15/80,  1, 1, x % 20, x % 10, TX_GREEN, TX_BLUE , TX_GREEN);
+
       x ++;
       txSetFillColor (TX_BLACK);
       txSleep (10);
@@ -275,11 +290,11 @@ txCircle (x + 25 * sizeX, y + 25 * sizeY, 12 * sizeX);
 
 txSetColor     (TX_GREEN);
 txSetFillColor (TX_GREEN);
-txCircle (x + 25 * sizeX, y + 75 * sizeY, 12 * sizeX);
+txCircle (x + 25 * sizeX, y + 125 * sizeY, 12 * sizeX);
 
 txSetColor     (TX_YELLOW);
 txSetFillColor (TX_YELLOW);
-txCircle (x + 25 * sizeX, y + 125 * sizeY, 12 * sizeX);
+txCircle (x + 25 * sizeX, y +  75 * sizeY, 12 * sizeX);
 
   if (colorHeadlight == 1)
   {
@@ -291,13 +306,13 @@ txCircle (x + 25 * sizeX, y + 125 * sizeY, 12 * sizeX);
   {
    txSetColor     (TX_GREEN);
    txSetFillColor (TX_GREEN);
-   txCircle (x + 25 * sizeX, y + 75 * sizeY, 20 * sizeX);
+   txCircle (x + 25 * sizeX, y + 125 * sizeY, 20 * sizeX);
   }
   if (colorHeadlight == 3)
   {
    txSetColor     (TX_YELLOW);
    txSetFillColor (TX_YELLOW);
-   txCircle (x + 25 * sizeX, y + 125 * sizeY, 20 * sizeX);
+   txCircle (x + 25 * sizeX, y +  75 * sizeY, 20 * sizeX);
   }
 }
 
