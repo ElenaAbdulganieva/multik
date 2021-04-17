@@ -52,15 +52,15 @@ int main ()
     txBegin ();
     txCreateWindow (800,600);
 
-    TextBegin      ();
-    GirlsAlong     ();
-    TreesGrowing   ();
-    GirlsLeaves    ();
-    BirdsBegin     ();
-    BirdsEnd       ();
-    CarsGo         ();
+    TextBegin       ();
+    GirlsAlong      ();
+    TreesGrowing    ();
+    GirlsLeaves     ();
+    BirdsBegin      ();
+    BirdsEnd        ();
+    CarsGo          ();
     AppearedFactory ();
-    TextEnd        ();
+    TextEnd         ();
 
     txEnd ();
     return 0;
