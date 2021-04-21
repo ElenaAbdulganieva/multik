@@ -46,10 +46,8 @@ void BirdsEnd            ();
 void CarsGo              ();
 void AppearedFactory     ();
 
-
 int main ()
     {
-    txBegin ();
     txCreateWindow (800,600);
 
     TextBegin       ();
@@ -62,12 +60,12 @@ int main ()
     AppearedFactory ();
     TextEnd         ();
 
-    txEnd ();
     return 0;
     }
 
 void AppearedFactory ()
     {
+    txBegin ();
     int x = 0;
     while (x < 200)
         {
@@ -87,10 +85,12 @@ void AppearedFactory ()
         txSleep (10);
         txClear ();
         }
+    txEnd ();
     }
 
 void CarsGo ()
     {
+    txBegin ();
     int x = 0;
     while (x < 600)
         {
@@ -113,10 +113,12 @@ void CarsGo ()
         txSleep (10);
         txClear ();
         }
+    txEnd ();
     }
 
 void BirdsEnd ()
     {
+    txBegin ();
     int x = 0;
     while (x < 200)
         {
@@ -139,10 +141,12 @@ void BirdsEnd ()
         txSleep (10);
         txClear ();
         }
+    txEnd ();
     }
 
 void BirdsBegin ()
     {
+    txBegin ();
     int x = 0;
     while (x < 80)
         {
@@ -190,10 +194,12 @@ void BirdsBegin ()
         txSleep (10);
         txClear ();
         }
+    txEnd ();
     }
 
 void GirlsLeaves ()
     {
+    txBegin ();
     int x = 0;
     while (x < 50)
         {
@@ -215,10 +221,12 @@ void GirlsLeaves ()
         txSetFillColor (TX_BLACK);
         txSleep (2);
         }
+    txEnd ();
     }
 
 void TextBegin ()
     {
+    txBegin ();
     int x = 0;
     while (x < 200)
         {
@@ -234,10 +242,12 @@ void TextBegin ()
         x ++;
         txSleep (10);
         }
+    txEnd ();
     }
 
 void TextEnd ()
     {
+    txBegin ();
     int x = 0;
     while (x < 600)
         {
@@ -263,10 +273,12 @@ void TextEnd ()
         x ++;
         txSleep (5);
         }
+    txEnd ();
     }
 
 void TreesGrowing ()
     {
+    txBegin ();
     int x = 0;
     while (x < 40)
         {
@@ -288,10 +300,12 @@ void TreesGrowing ()
         txSleep (100);
         txClear ();
         }
+    txEnd ();
     }
 
 void GirlsAlong ()
     {
+    txBegin ();
     int x = 0;
     while (x < 700)
         {
@@ -307,6 +321,7 @@ void GirlsAlong ()
         txSleep (10);
         txClear ();
         }
+    txEnd ();
     }
 
 void DrawMotorWay (int x, int y, double sizeX, double sizeY, int width,
