@@ -16,6 +16,9 @@ void DrawTree          (int x, int y, double sizeX, double sizeY, int DFruit,
                         int WobbleCrown, int HeightTrunk, int HeightCrown,
                         COLORREF colorFruit1, COLORREF colorFruit2, COLORREF colorFruit3);
 
+void DrawFlower        (int x, int y, double sizeX, double sizeY, int Disclosure,
+                        int UpSheet, int Swinging, COLORREF colorFlower);
+
 void DrawSun           (int x, int y, double sizeX, double sizeY, int Beamlength,
                         COLORREF colorSun, COLORREF colorCloud, COLORREF colorEye);
 
@@ -81,6 +84,10 @@ void AppearedFactory ()
 
         DrawTrafficlights (95, 100, 1, 1, x % 4, TX_GREY);
 
+        DrawCar (      6 * x, 350, 1, 1, 25, TX_GREY, TX_LIGHTBLUE, -10);
+        DrawCar (800 - 9 * x, 375, 1, 1, 20, TX_RED,  TX_ORANGE,     20);
+        DrawCar (800 - 6 * x, 420, 1, 1, 30, TX_BLUE, TX_PINK,      -20);
+
         x ++;
         txSleep (10);
         txClear ();
@@ -133,6 +140,13 @@ void BirdsEnd ()
         DrawTree (550, 250, 0.5, 0.5, 6, 5 - x % 10, 0, x % 5,
                   RGB(255 - x, 0, 0), RGB(255 - x, 0, 0), RGB(255 - x, 0, 0));
 
+        DrawFlower (100, 300,  3, 3, x % 5, x % 3, -5 + x % 10, TX_RED      );
+        DrawFlower (300, 400,  8, 8, x % 7, x % 4, -3 + x %  5, TX_BLUE     );
+        DrawFlower (200, 500, -5, 5, x % 6, x % 6, -6 + x %  4, TX_YELLOW   );
+        DrawFlower (250, 250,  6, 6, x % 7, x % 4, -3 + x %  5, TX_WHITE    );
+        DrawFlower (400, 300, -4, 4, x % 7, x % 4, -3 + x %  5, TX_ORANGE   );
+        DrawFlower (500, 300,  5, 5, x % 7, x % 4, -3 + x %  5, TX_LIGHTBLUE);
+
         DrawBird (560 + x, 175 - x, -1, 1, x %  5, TX_ORANGE, TX_WHITE, TX_WHITE);
         DrawBird (210 - x, 150 - x,  1, 1, x %  3, TX_WHITE , TX_BLUE , TX_WHITE);
         DrawBird (300 + x, 100 - x, -1, 1, x % 10, TX_RED   , TX_WHITE, TX_BLUE );
@@ -160,6 +174,13 @@ void BirdsBegin ()
         DrawTree (550, 250, 0.5, 0.5, 6, 5 - x % 10, 0, x % 5,
                   RGB(255, 0, 0), RGB(255, 0, 0), RGB(255, 0, 0));
 
+        DrawFlower (100, 300,  3, 3, x % 5, x % 3, -5 + x % 10, TX_RED      );
+        DrawFlower (300, 400,  8, 8, x % 7, x % 4, -3 + x %  5, TX_BLUE     );
+        DrawFlower (200, 500, -5, 5, x % 6, x % 6, -6 + x %  4, TX_YELLOW   );
+        DrawFlower (250, 250,  6, 6, x % 7, x % 4, -3 + x %  5, TX_WHITE    );
+        DrawFlower (400, 300, -4, 4, x % 7, x % 4, -3 + x %  5, TX_ORANGE   );
+        DrawFlower (500, 300,  5, 5, x % 7, x % 4, -3 + x %  5, TX_LIGHTBLUE);
+
         DrawBird (800 - 3 * x, 175 + (x % 10 - 10),  1, 1, x %  5, TX_ORANGE, TX_WHITE, TX_WHITE);
         DrawBird ( 50 + 2 * x, 150 + (x %  5 -  5), -1, 1, x %  3, TX_WHITE , TX_BLUE , TX_WHITE);
         DrawBird (700 - 5 * x, 100 + (x %  3 -  3),  1, 1, x % 10, TX_RED   , TX_WHITE, TX_BLUE );
@@ -181,6 +202,13 @@ void BirdsBegin ()
                   RGB(255, 0, 0), RGB(255, 0, 0), RGB(255, 0, 0));
         DrawTree (550, 250, 0.5, 0.5, 6, 5 - x % 10, 0, x % 5,
                   RGB(255, 0, 0), RGB(255, 0, 0), RGB(255, 0, 0));
+
+        DrawFlower (100, 300,  3, 3, x % 5, x % 3, -5 + x % 10, TX_RED      );
+        DrawFlower (300, 400,  8, 8, x % 7, x % 4, -3 + x %  5, TX_BLUE     );
+        DrawFlower (200, 500, -5, 5, x % 6, x % 6, -6 + x %  4, TX_YELLOW   );
+        DrawFlower (250, 250,  6, 6, x % 7, x % 4, -3 + x %  5, TX_WHITE    );
+        DrawFlower (400, 300, -4, 4, x % 7, x % 4, -3 + x %  5, TX_ORANGE   );
+        DrawFlower (500, 300,  5, 5, x % 7, x % 4, -3 + x %  5, TX_LIGHTBLUE);
 
         DrawDog  (700 - 4 * x, 470,  1, 1, x %  2, x % 5, TX_BLACK, TX_WHITE, TX_GREY);
         DrawDog  (750 - 2 * x, 480,  1, 1, x % 10, x % 4, TX_WHITE, TX_BLUE , TX_BLUE);
@@ -213,6 +241,13 @@ void GirlsLeaves ()
         DrawTree (550, 250,  0.5, 0.5,  6, 0, 0, 0,
                   RGB(200 + x, 180 - x, 0), RGB(200 + x, 180 - x, 0), RGB(200 + x, 180 - x, 0));
 
+        DrawFlower (100, 300,  3, 3, x % 5, x % 3, -5 + x % 10, TX_RED      );
+        DrawFlower (300, 400,  8, 8, x % 7, x % 4, -3 + x %  5, TX_BLUE     );
+        DrawFlower (200, 500, -5, 5, x % 6, x % 6, -6 + x %  4, TX_YELLOW   );
+        DrawFlower (250, 250,  6, 6, x % 7, x % 4, -3 + x %  5, TX_WHITE    );
+        DrawFlower (400, 300, -4, 4, x % 7, x % 4, -3 + x %  5, TX_ORANGE   );
+        DrawFlower (500, 300,  5, 5, x % 7, x % 4, -3 + x %  5, TX_LIGHTBLUE);
+
         DrawGirl (175 + 12 * x, 275,  1, 1, x % 10, x %  5, TX_RED,   TX_GREEN, TX_BLACK);
         DrawGirl (350 +  9 * x, 250,  1, 1, x % 15, x %  7, TX_BLUE,  TX_RED  , TX_BLUE );
         DrawGirl (668 +  2 * x, 168,  1, 1, x % 20, x % 10, TX_GREEN, TX_BLUE , TX_GREEN);
@@ -228,16 +263,56 @@ void TextBegin ()
     {
     txBegin ();
     int x = 0;
-    while (x < 200)
+    while (x < 150)
         {
         DrawBlackGround ();
         DrawSun (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
+        DrawFlower (100, 300,  3, 3, x % 5, x % 3, -5 + x % 10, TX_RED      );
+        DrawFlower (300, 400,  8, 8, x % 7, x % 4, -3 + x %  5, TX_BLUE     );
+        DrawFlower (200, 500, -5, 5, x % 6, x % 6, -6 + x %  4, TX_YELLOW   );
+        DrawFlower (250, 250,  6, 6, x % 7, x % 4, -3 + x %  5, TX_WHITE    );
+        DrawFlower (400, 300, -4, 4, x % 7, x % 4, -3 + x %  5, TX_ORANGE   );
+        DrawFlower (500, 300,  5, 5, x % 7, x % 4, -3 + x %  5, TX_LIGHTBLUE);
+
+        txSelectFont   ("Times", 50 +  x % 3);
+        txSetColor     (TX_ORANGE);
+        txSetFillColor (TX_ORANGE);
+        txTextOut      (595 - 2 * x,      2 * x, "The environmental ");
+        txTextOut      (595 - 2 * x, 50 + 2 * x, "company represents");
         txSelectFont   ("Times", 50 +  x % 3);
         txSetColor     (TX_WHITE);
         txSetFillColor (TX_WHITE);
         txTextOut      (600 - 2 * x,      2 * x, "The environmental ");
         txTextOut      (600 - 2 * x, 50 + 2 * x, "company represents");
+
+        x ++;
+        txSleep (10);
+        }
+
+    x = 0;
+    while (x < 100)
+        {
+        DrawBlackGround ();
+        DrawSun (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+
+        DrawFlower (100, 300,  3, 3, x % 5, x % 3, -5 + x % 10, TX_RED      );
+        DrawFlower (300, 400,  8, 8, x % 7, x % 4, -3 + x %  5, TX_BLUE     );
+        DrawFlower (200, 500, -5, 5, x % 6, x % 6, -6 + x %  4, TX_YELLOW   );
+        DrawFlower (250, 250,  6, 6, x % 7, x % 4, -3 + x %  5, TX_WHITE    );
+        DrawFlower (400, 300, -4, 4, x % 7, x % 4, -3 + x %  5, TX_ORANGE   );
+        DrawFlower (500, 300,  5, 5, x % 7, x % 4, -3 + x %  5, TX_LIGHTBLUE);
+
+        txSelectFont   ("Times", 50);
+        txSetColor     (TX_ORANGE);
+        txSetFillColor (TX_ORANGE);
+        txTextOut      (295, 300, "The environmental ");
+        txTextOut      (295, 350, "company represents");
+        txSelectFont   ("Times", 50);
+        txSetColor     (TX_WHITE);
+        txSetFillColor (TX_WHITE);
+        txTextOut      (300, 300, "The environmental ");
+        txTextOut      (300, 350, "company represents");
 
         x ++;
         txSleep (10);
@@ -249,7 +324,7 @@ void TextEnd ()
     {
     txBegin ();
     int x = 0;
-    while (x < 600)
+    while (x < 520)
         {
         txClear ();
         DrawBlackGroundRoad ();
@@ -259,6 +334,9 @@ void TextEnd ()
         txSetColor     (TX_WHITE);
         txSetFillColor (TX_WHITE);
         txTextOut      (600 - x, 260, "The job is done: Abdulganieva EV");
+        txSetColor     (TX_ORANGE);
+        txSetFillColor (TX_ORANGE);
+        txTextOut      (598 - x, 260, "The job is done: Abdulganieva EV");
 
         txSelectFont   ("Times", 20);
         txTextOut      (650 - x, 315 + x % 5, "welcome to Togliatti");
@@ -284,6 +362,13 @@ void TreesGrowing ()
         {
         DrawBlackGround ();
         DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+
+        DrawFlower (100, 300,  3, 3, x % 5, x % 3, -5 + x % 10, TX_RED      );
+        DrawFlower (300, 400,  8, 8, x % 7, x % 4, -3 + x %  5, TX_BLUE     );
+        DrawFlower (200, 500, -5, 5, x % 6, x % 6, -6 + x %  4, TX_YELLOW   );
+        DrawFlower (250, 250,  6, 6, x % 7, x % 4, -3 + x %  5, TX_WHITE    );
+        DrawFlower (400, 300, -4, 4, x % 7, x % 4, -3 + x %  5, TX_ORANGE   );
+        DrawFlower (500, 300,  5, 5, x % 7, x % 4, -3 + x %  5, TX_LIGHTBLUE);
 
         DrawGirl (175, 275,  1, 1, x % 10, x %  5, TX_RED,   TX_GREEN, TX_BLACK);
         DrawGirl (350, 250,  1, 1, x % 15, x %  7, TX_BLUE,  TX_RED  , TX_BLUE );
@@ -311,6 +396,13 @@ void GirlsAlong ()
         {
         DrawBlackGround ();
         DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+
+        DrawFlower (100, 300,  3, 3, x % 5, x % 3, -5 + x % 10, TX_RED      );
+        DrawFlower (300, 400,  8, 8, x % 7, x % 4, -3 + x %  5, TX_BLUE     );
+        DrawFlower (200, 500, -5, 5, x % 6, x % 6, -6 + x %  4, TX_YELLOW   );
+        DrawFlower (250, 250,  6, 6, x % 7, x % 4, -3 + x %  5, TX_WHITE    );
+        DrawFlower (400, 300, -4, 4, x % 7, x % 4, -3 + x %  5, TX_ORANGE   );
+        DrawFlower (500, 300,  5, 5, x % 7, x % 4, -3 + x %  5, TX_LIGHTBLUE);
 
         DrawGirl (  0 + x/4    , 100 + x/4    , 1, 1, x % 10, x %  5, TX_RED,   TX_GREEN, TX_BLACK);
         DrawGirl (700 - x/2    , 600 - x/2    , 1, 1, x % 15, x %  7, TX_BLUE,  TX_RED  , TX_BLUE );
@@ -612,6 +704,40 @@ void DrawDog (int x, int y, double sizeX, double sizeY, int TailShift, int EarSh
                      {x + 20 * sizeX, y + 10 * sizeY}, {x + 20 * sizeX, y +  5 * sizeY},
                      {x + 15 * sizeX, y +  5 * sizeY}};
     txPolygon (lapa, 7);
+    }
+
+void DrawFlower (int x, int y, double sizeX, double sizeY, int Disclosure,
+                 int UpSheet, int Swinging, COLORREF colorFlower)
+    {
+    txSetColor     (RGB (50, 200, 50));
+    txSetFillColor (RGB (50, 200, 50));
+    txLine (x, y, x + Swinging, y-5 * sizeY);
+    POINT sheet [] =   {{x +             Swinging, y - 1 * sizeY          },
+                        {x + 2 * sizeX + Swinging, y - 3 * sizeY + UpSheet},
+                        {x + 3 * sizeX + Swinging, y - 3 * sizeY + UpSheet},
+                        {x + 3 * sizeX + Swinging, y - 2 * sizeY + UpSheet},
+                        {x +             Swinging, y - 1 * sizeY          }};
+    txPolygon (sheet, 5);
+
+    POINT pedicel [] = {{x +             Swinging, y - 5 * sizeY},
+                        {x - 1 * sizeX + Swinging, y - 6 * sizeY},
+                        {x + 1 * sizeX + Swinging, y - 6 * sizeY},
+                        {x +             Swinging, y - 5 * sizeY}};
+    txPolygon (pedicel, 4);
+
+    txSetColor     (colorFlower);
+    txSetFillColor (colorFlower);
+    POINT bud [] = {{x - 1 * sizeX + Swinging             , y -  6 * sizeY},
+                    {x - 2 * sizeX + Swinging             , y -  7 * sizeY},
+                    {x - 2 * sizeX + Disclosure + Swinging, y - 10 * sizeY},
+                    {x - 1 * sizeX + Swinging             , y -  9 * sizeY},
+                    {x             + Swinging             , y - 10 * sizeY},
+                    {x + 1 * sizeX + Swinging             , y -  9 * sizeY},
+                    {x + 2 * sizeX - Disclosure + Swinging, y - 10 * sizeY},
+                    {x + 2 * sizeX + Swinging             , y -  7 * sizeY},
+                    {x + 1 * sizeX + Swinging             , y -  6 * sizeY},
+                    {x - 1 * sizeX + Swinging             , y -  6 * sizeY}};
+    txPolygon (bud, 10);
     }
 
 void DrawBlackGround ()
