@@ -6,6 +6,8 @@
 
 # include "TXlib.h"
 
+const int TIME = 1;
+
 void DrawMotorWay      (int x, int y, double sizeX, double sizeY, int width,
                         COLORREF colorWay, COLORREF colorBand);
 
@@ -89,7 +91,7 @@ void AppearedFactory ()
         DrawCar (800 - 6 * x, 420, 1, 1, 30, TX_BLUE, TX_PINK,      -20);
 
         x ++;
-        txSleep (10);
+        txSleep (TIME);
         txClear ();
         }
     txEnd ();
@@ -117,7 +119,7 @@ void CarsGo ()
         DrawCar (800 - 2 * x, 420, 1, 1, 30, TX_BLUE, TX_PINK,      -20);
 
         x ++;
-        txSleep (10);
+        txSleep (TIME);
         txClear ();
         }
     txEnd ();
@@ -152,7 +154,7 @@ void BirdsEnd ()
         DrawBird (300 + x, 100 - x, -1, 1, x % 10, TX_RED   , TX_WHITE, TX_BLUE );
 
         x ++;
-        txSleep (10);
+        txSleep (TIME);
         txClear ();
         }
     txEnd ();
@@ -186,7 +188,7 @@ void BirdsBegin ()
         DrawBird (700 - 5 * x, 100 + (x %  3 -  3),  1, 1, x % 10, TX_RED   , TX_WHITE, TX_BLUE );
 
         x ++;
-        txSleep (10);
+        txSleep (TIME);
         txClear ();
         }
 
@@ -219,7 +221,7 @@ void BirdsBegin ()
         DrawBird (300, 100 + (x %  3 -  3),  1, 1, x % 10, TX_RED   , TX_WHITE, TX_BLUE );
 
         x ++;
-        txSleep (10);
+        txSleep (TIME);
         txClear ();
         }
     txEnd ();
@@ -254,7 +256,7 @@ void GirlsLeaves ()
 
         x ++;
         txSetFillColor (TX_BLACK);
-        txSleep (2);
+        txSleep (TIME);
         }
     txEnd ();
     }
@@ -287,7 +289,7 @@ void TextBegin ()
         txTextOut      (600 - 2 * x, 50 + 2 * x, "company represents");
 
         x ++;
-        txSleep (10);
+        txSleep (TIME);
         }
 
     x = 0;
@@ -315,7 +317,7 @@ void TextBegin ()
         txTextOut      (300, 350, "company represents");
 
         x ++;
-        txSleep (10);
+        txSleep (TIME);
         }
     txEnd ();
     }
@@ -349,7 +351,7 @@ void TextEnd ()
         DrawBird       (590 - x, 150, 1, 1, x % 5, TX_WHITE, TX_ORANGE, TX_WHITE);
 
         x ++;
-        txSleep (5);
+        txSleep (TIME);
         }
     txEnd ();
     }
@@ -382,7 +384,7 @@ void TreesGrowing ()
                   RGB(0, 100 + 2   * x, 0), RGB(0, 100 + 2 * x, 0), RGB(0, 100 + 2 * x, 0));
 
         x ++;
-        txSleep (100);
+        txSleep (TIME);
         txClear ();
         }
     txEnd ();
@@ -410,7 +412,7 @@ void GirlsAlong ()
 
         x ++;
         txSetFillColor (TX_BLACK);
-        txSleep (10);
+        txSleep (TIME);
         txClear ();
         }
     txEnd ();
@@ -561,32 +563,32 @@ void DrawFactory (int x, int y, double sizeX, double sizeY, int PipeHeight,
     {
     txSetColor     (colorFactory);
     txSetFillColor (colorFactory);
-    POINT factory [] = {{x       * sizeX, y      * sizeY},
-                        {x       * sizeX, y - 10 * sizeY},
-                        {x +  10 * sizeX, y - 10 * sizeY},
-                        {x +  10 * sizeX, y - 20 * sizeY},
-                        {x +  30 * sizeX, y - 20 * sizeY},
+    POINT factory [] = {{x       * sizeX, y      * sizeY             },
+                        {x       * sizeX, y - 10 * sizeY             },
+                        {x +  10 * sizeX, y - 10 * sizeY             },
+                        {x +  10 * sizeX, y - 20 * sizeY             },
+                        {x +  30 * sizeX, y - 20 * sizeY             },
                         {x +  30 * sizeX, y - 60 * sizeY - PipeHeight},
                         {x +  40 * sizeX, y - 60 * sizeY - PipeHeight},
-                        {x +  40 * sizeX, y - 20 * sizeY},
-                        {x +  50 * sizeX, y - 20 * sizeY},
-                        {x +  50 * sizeX, y - 30 * sizeY},
-                        {x +  60 * sizeX, y - 30 * sizeY},
-                        {x +  60 * sizeX, y - 40 * sizeY},
-                        {x +  80 * sizeX, y - 40 * sizeY},
+                        {x +  40 * sizeX, y - 20 * sizeY             },
+                        {x +  50 * sizeX, y - 20 * sizeY             },
+                        {x +  50 * sizeX, y - 30 * sizeY             },
+                        {x +  60 * sizeX, y - 30 * sizeY             },
+                        {x +  60 * sizeX, y - 40 * sizeY             },
+                        {x +  80 * sizeX, y - 40 * sizeY             },
                         {x +  80 * sizeX, y - 80 * sizeY - PipeHeight},
                         {x +  90 * sizeX, y - 80 * sizeY - PipeHeight},
-                        {x +  90 * sizeX, y - 80 * sizeY},
-                        {x +  90 * sizeX, y - 40 * sizeY},
-                        {x + 110 * sizeX, y - 40 * sizeY},
-                        {x + 110 * sizeX, y - 30 * sizeY},
-                        {x + 120 * sizeX, y - 30 * sizeY},
-                        {x + 120 * sizeX, y - 20 * sizeY},
-                        {x + 130 * sizeX, y - 20 * sizeY},
-                        {x + 130 * sizeX, y - 10 * sizeY},
-                        {x + 140 * sizeX, y - 10 * sizeY},
-                        {x + 140 * sizeX, y      * sizeY},
-                        {x       * sizeX, y      * sizeY}};
+                        {x +  90 * sizeX, y - 80 * sizeY             },
+                        {x +  90 * sizeX, y - 40 * sizeY             },
+                        {x + 110 * sizeX, y - 40 * sizeY             },
+                        {x + 110 * sizeX, y - 30 * sizeY             },
+                        {x + 120 * sizeX, y - 30 * sizeY             },
+                        {x + 120 * sizeX, y - 20 * sizeY             },
+                        {x + 130 * sizeX, y - 20 * sizeY             },
+                        {x + 130 * sizeX, y - 10 * sizeY             },
+                        {x + 140 * sizeX, y - 10 * sizeY             },
+                        {x + 140 * sizeX, y      * sizeY             },
+                        {x       * sizeX, y      * sizeY             }};
     txPolygon (factory, 26);
     }
 
