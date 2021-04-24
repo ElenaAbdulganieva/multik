@@ -38,18 +38,20 @@ void DrawGirl          (int x, int y, double sizeX, double sizeY, int HandUp,int
 
 void DrawFactory       (int x, int y, double sizeX, double sizeY, int PipeHeight,
                         COLORREF colorFactory);
+void City              (int x, int y, double sizeX, double sizeY, COLORREF colorCity);
 
-void DrawBlackGround     ();
-void DrawBlackGroundRoad ();
-void GirlsAlong          ();
-void TreesGrowing        ();
-void TextBegin           ();
-void TextEnd             ();
-void GirlsLeaves         ();
-void BirdsBegin          ();
-void BirdsEnd            ();
-void CarsGo              ();
-void AppearedFactory     ();
+void DrawBlackGround         ();
+void DrawBlackGroundRoad     ();
+void GirlsAlong              ();
+void TreesGrowing            ();
+void TextBegin               ();
+void TextEnd                 ();
+void GirlsLeaves             ();
+void BirdsBegin              ();
+void BirdsEnd                ();
+void CarsGo                  ();
+void AppearedFactory         ();
+void DrawBlackGroundRoadCity ();
 
 int main ()
     {
@@ -70,12 +72,12 @@ int main ()
 
 void AppearedFactory ()
     {
+    txPlaySound ("zavod.wav");
     txBegin ();
     int x = 0;
     while (x < 200)
         {
-        DrawBlackGroundRoad ();
-        DrawSun (500,  50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+        DrawBlackGroundRoadCity ();
 
         DrawFactory (100, 200, 1, 1, x %  3, TX_GREY );
         DrawFactory (250, 200, 1, 1, x %  4, TX_BLACK);
@@ -87,7 +89,7 @@ void AppearedFactory ()
         DrawTrafficlights (95, 100, 1, 1, x % 4, TX_GREY);
 
         DrawCar (      6 * x, 350, 1, 1, 25, TX_GREY, TX_LIGHTBLUE, -10);
-        DrawCar (800 - 9 * x, 375, 1, 1, 20, TX_RED,  TX_ORANGE,     20);
+        DrawCar (800 - 9 * x, 375, 1, 1, 20, TX_RED , TX_ORANGE,     20);
         DrawCar (800 - 6 * x, 420, 1, 1, 30, TX_BLUE, TX_PINK,      -20);
 
         x ++;
@@ -95,17 +97,18 @@ void AppearedFactory ()
         txClear ();
         }
     txEnd ();
+    txPlaySound ();
     }
 
 void CarsGo ()
     {
+    txPlaySound ("car.wav");
     txBegin ();
     int x = 0;
     while (x < 600)
         {
-        DrawBlackGroundRoad ();
-        DrawSun           (500,  50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
-        DrawTrafficlights ( 95, 100, 1, 1,      x % 4, TX_GREY);
+        DrawBlackGroundRoadCity ();
+        DrawTrafficlights ( 95, 100, 1, 1, x % 4, TX_GREY);
 
         DrawTree (200, 300, 1  , 1  , 8, 5 - x % 10, 0, x % 5,
                   RGB(0, 0, 0), RGB(0, 0, 0), RGB(0, 0, 0));
@@ -127,13 +130,13 @@ void CarsGo ()
 
 void BirdsEnd ()
     {
+    txPlaySound ("birdsend.wav");
     txBegin ();
     int x = 0;
     while (x < 200)
         {
-        DrawBlackGroundRoad ();
-        DrawSun           (500,  50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
-        DrawTrafficlights ( 95, 100, 1, 1,      x % 4, TX_GREY);
+        DrawBlackGroundRoadCity ();
+        DrawTrafficlights ( 95, 100, 1, 1, x % 4, TX_GREY);
 
         DrawTree (200, 300, 1  , 1  , 8, 5 - x % 10, 0, x % 5,
                   RGB(255 - x, 0, 0), RGB(255 - x, 0, 0), RGB(255 - x, 0, 0));
@@ -158,10 +161,12 @@ void BirdsEnd ()
         txClear ();
         }
     txEnd ();
+    txPlaySound ();
     }
 
 void BirdsBegin ()
     {
+    txPlaySound ("birdsbegin.wav");
     txBegin ();
     int x = 0;
     while (x < 80)
@@ -225,10 +230,12 @@ void BirdsBegin ()
         txClear ();
         }
     txEnd ();
+    txPlaySound ();
     }
 
 void GirlsLeaves ()
     {
+    txPlaySound ("veter.wav");
     txBegin ();
     int x = 0;
     while (x < 50)
@@ -259,11 +266,13 @@ void GirlsLeaves ()
         txSleep (TIME);
         }
     txEnd ();
+    txPlaySound ();
     }
 
 void TextBegin ()
     {
     txBegin ();
+    txPlaySound ("veter.wav");
     int x = 0;
     while (x < 150)
         {
@@ -324,13 +333,20 @@ void TextBegin ()
 
 void TextEnd ()
     {
+    txPlaySound ("gta.wav");
     txBegin ();
     int x = 0;
     while (x < 520)
         {
         txClear ();
-        DrawBlackGroundRoad ();
-        DrawSun        (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+        DrawBlackGroundRoadCity ();
+
+        DrawFactory (100, 200, 1, 1, x %  3, TX_GREY );
+        DrawFactory (250, 200, 1, 1, x %  4, TX_BLACK);
+        DrawFactory (250, 200, 1, 1, x %  5, TX_WHITE);
+        DrawFactory (400, 200, 1, 1, x %  7, TX_BLACK);
+        DrawFactory (500, 200, 1, 1, x %  9, TX_BLACK);
+        DrawFactory (600, 200, 1, 1, x % 10, TX_RED  );
 
         txSelectFont   ("Times", 50);
         txSetColor     (TX_WHITE);
@@ -354,10 +370,12 @@ void TextEnd ()
         txSleep (TIME);
         }
     txEnd ();
+    txPlaySound ();
     }
 
 void TreesGrowing ()
     {
+    txPlaySound ("listva.wav");
     txBegin ();
     int x = 0;
     while (x < 40)
@@ -387,7 +405,9 @@ void TreesGrowing ()
         txSleep (TIME);
         txClear ();
         }
+    txSleep (100);
     txEnd ();
+    txPlaySound ();
     }
 
 void GirlsAlong ()
@@ -416,6 +436,7 @@ void GirlsAlong ()
         txClear ();
         }
     txEnd ();
+    txPlaySound ();
     }
 
 void DrawMotorWay (int x, int y, double sizeX, double sizeY, int width,
@@ -763,3 +784,30 @@ void DrawBlackGroundRoad ()
     DrawMotorWay   (0, 400,   1,   1, 10, TX_DARKGREY, TX_WHITE);
     }
 
+void DrawBlackGroundRoadCity ()
+    {
+    txSetColor     (RGB (0, 0,   200));
+    txSetFillColor (RGB (0, 0,   200));
+    txRectangle    (0,   0, 800, 200 );
+    txSetColor     (RGB (0, 100,   0));
+    txSetFillColor (RGB (0, 100,   0));
+    txRectangle    (0, 200, 800, 600 );
+    DrawMotorWay   (0, 400,   1,   1, 10, TX_DARKGREY, TX_WHITE);
+    City ( 0, 0, 1  , 1  , TX_GREY);
+    City (10, 0, 0.8, 0.8, TX_DARKGREY);
+    }
+
+void City (int x, int y, double sizeX, double sizeY, COLORREF colorCity)
+    {
+    txSetColor     (colorCity);
+    txSetFillColor (colorCity);
+    txRectangle ( 50 + x * sizeX, 50 + y * sizeY, 100 + x * sizeX, 200 + y * sizeY);
+    txRectangle (125 + x * sizeX, 50 + y * sizeY, 175 + x * sizeX, 200 + y * sizeY);
+    txRectangle (200 + x * sizeX, 25 + y * sizeY, 250 + x * sizeX, 200 + y * sizeY);
+    txRectangle (275 + x * sizeX, 75 + y * sizeY, 325 + x * sizeX, 200 + y * sizeY);
+    txRectangle (350 + x * sizeX, 75 + y * sizeY, 400 + x * sizeX, 200 + y * sizeY);
+    txRectangle (425 + x * sizeX, 75 + y * sizeY, 475 + x * sizeX, 200 + y * sizeY);
+    txRectangle (500 + x * sizeX, 25 + y * sizeY, 550 + x * sizeX, 200 + y * sizeY);
+    txRectangle (575 + x * sizeX, 50 + y * sizeY, 625 + x * sizeX, 200 + y * sizeY);
+    txRectangle (675 + x * sizeX, 75 + y * sizeY, 725 + x * sizeX, 200 + y * sizeY);
+    }
