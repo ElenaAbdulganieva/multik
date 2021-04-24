@@ -38,6 +38,7 @@ void DrawGirl          (int x, int y, double sizeX, double sizeY, int HandUp,int
 
 void DrawFactory       (int x, int y, double sizeX, double sizeY, int PipeHeight,
                         COLORREF colorFactory);
+
 void City              (int x, int y, double sizeX, double sizeY, COLORREF colorCity);
 
 void DrawBlackGround         ();
