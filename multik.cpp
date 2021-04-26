@@ -88,6 +88,7 @@ void TextBegin ()
     {
     txBegin ();
     txPlaySound ("veter.wav");
+
     int x = 0;
     while (x < 150)
         {
@@ -139,6 +140,7 @@ void TextBegin ()
 void GirlsAlong ()
     {
     txBegin ();
+
     int x = 0;
     while (x < 700)
         {
@@ -164,6 +166,7 @@ void TreesGrowing ()
     {
     txPlaySound ("listva.wav");
     txBegin ();
+
     int x = 0;
     while (x < 40)
         {
@@ -196,6 +199,7 @@ void GirlsLeaves ()
     {
     txPlaySound ("veter.wav");
     txBegin ();
+
     int x = 0;
     while (x < 50)
         {
@@ -221,6 +225,7 @@ void BirdsBegin ()
     {
     txPlaySound ("birdsbegin.wav");
     txBegin ();
+
     int x = 0;
     while (x < 80)
         {
@@ -265,6 +270,7 @@ void BirdsEnd ()
     {
     txPlaySound ("birdsend.wav");
     txBegin ();
+
     int x = 0;
     while (x < 200)
         {
@@ -290,6 +296,7 @@ void CarsGo ()
     {
     txPlaySound ("car.wav");
     txBegin ();
+
     int x = 0;
     while (x < 300)
         {
@@ -311,6 +318,7 @@ void AppearedFactory ()
     {
     txPlaySound ("zavod.wav");
     txBegin ();
+
     int x = 0;
     while (x < 200)
         {
