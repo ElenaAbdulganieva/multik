@@ -54,8 +54,8 @@ void Flowers           (int Disclosure, int UpSheet, int Swinging);
 
 void Birds             (int x, int y, int UpWing);
 
-void DrawBackGround         ();
-void DrawBackGroundRoad     ();
+void DrawBackGround          ();
+void DrawBackGroundRoad      ();
 void GirlsAlong              ();
 void TreesGrowing            ();
 void TextBegin               ();
@@ -65,7 +65,7 @@ void BirdsBegin              ();
 void BirdsEnd                ();
 void CarsGo                  ();
 void AppearedFactory         ();
-void DrawBackGroundRoadCity ();
+void DrawBackGroundRoadCity  ();
 
 int main ()
     {
@@ -89,36 +89,36 @@ void TextBegin ()
     txBegin ();
     txPlaySound ("veter.wav");
 
-    int x = 0;
-    while (x < 150)
+    int t = 0;
+    while (t < 150)
         {
         DrawBackGround ();
-        DrawSun (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+        DrawSun (500, 50, 1, 1, 10 - t % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
-        Flowers (x, x, x);
+        Flowers (t, t, t);
 
-        txSelectFont   ("Times", 50 +  x % 3);
+        txSelectFont   ("Times", 50 + t % 3);
         txSetColor     (TX_ORANGE);
         txSetFillColor (TX_ORANGE);
-        txTextOut      (595 - 2 * x,      2 * x, "The environmental ");
-        txTextOut      (595 - 2 * x, 50 + 2 * x, "company represents");
-        txSelectFont   ("Times", 50 +  x % 3);
+        txTextOut      (595 - 2 * t,      2 * t, "The environmental ");
+        txTextOut      (595 - 2 * t, 50 + 2 * t, "company represents");
+        txSelectFont   ("Times", 50 + t % 3);
         txSetColor     (TX_WHITE);
         txSetFillColor (TX_WHITE);
-        txTextOut      (600 - 2 * x,      2 * x, "The environmental ");
-        txTextOut      (600 - 2 * x, 50 + 2 * x, "company represents");
+        txTextOut      (600 - 2 * t,      2 * t, "The environmental ");
+        txTextOut      (600 - 2 * t, 50 + 2 * t, "company represents");
 
-        x ++;
+        t ++;
         txSleep (TIME);
         }
 
-    x = 0;
-    while (x < 100)
+    t = 0;
+    while (t < 100)
         {
         DrawBackGround ();
-        DrawSun (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+        DrawSun (500, 50, 1, 1, 10 - t % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
-        Flowers (x, x, x);
+        Flowers (t, t, t);
 
         txSelectFont   ("Times", 50);
         txSetColor     (TX_ORANGE);
@@ -131,7 +131,7 @@ void TextBegin ()
         txTextOut      (300, 300, "The environmental ");
         txTextOut      (300, 350, "company represents");
 
-        x ++;
+        t ++;
         txSleep (TIME);
         }
     txEnd ();
@@ -141,19 +141,19 @@ void GirlsAlong ()
     {
     txBegin ();
 
-    int x = 0;
-    while (x < 700)
+    int t = 0;
+    while (t < 700)
         {
         DrawBackGround ();
-        DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+        DrawSun  (500, 50, 1, 1, 10 - t % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
-        Flowers (x, x, x);
+        Flowers (t, t, t);
 
-        DrawGirl (  0 + x/4    , 100 + x/4    , 1, 1, x % 10, x %  5, TX_RED,   TX_GREEN, TX_BLACK);
-        DrawGirl (700 - x/2    , 600 - x/2    , 1, 1, x % 15, x %  7, TX_BLUE,  TX_RED  , TX_BLUE );
-        DrawGirl (800 - x*15/80, 300 - x*15/80, 1, 1, x % 20, x % 10, TX_GREEN, TX_BLUE , TX_GREEN);
+        DrawGirl (  0 + t/4    , 100 + t/4    , 1, 1, t % 10, t %  5, TX_RED,   TX_GREEN, TX_BLACK);
+        DrawGirl (700 - t/2    , 600 - t/2    , 1, 1, t % 15, t %  7, TX_BLUE,  TX_RED  , TX_BLUE );
+        DrawGirl (800 - t*15/80, 300 - t*15/80, 1, 1, t % 20, t % 10, TX_GREEN, TX_BLUE , TX_GREEN);
 
-        x ++;
+        t ++;
         txSetFillColor (TX_BLACK);
         txSleep (TIME);
         txClear ();
@@ -167,26 +167,26 @@ void TreesGrowing ()
     txPlaySound ("listva.wav");
     txBegin ();
 
-    int x = 0;
-    while (x < 40)
+    int t = 0;
+    while (t < 40)
         {
         DrawBackGround ();
-        DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+        DrawSun  (500, 50, 1, 1, 10 - t % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
-        Flowers (x, x, x);
+        Flowers (t, t, t);
 
-        DrawGirl (175, 275,  1, 1, x % 10, x %  5, TX_RED,   TX_GREEN, TX_BLACK);
-        DrawGirl (350, 250,  1, 1, x % 15, x %  7, TX_BLUE,  TX_RED  , TX_BLUE );
-        DrawGirl (668, 168,  1, 1, x % 20, x % 10, TX_GREEN, TX_BLUE , TX_GREEN);
+        DrawGirl (175, 275,  1, 1, t % 10, t %  5, TX_RED,   TX_GREEN, TX_BLACK);
+        DrawGirl (350, 250,  1, 1, t % 15, t %  7, TX_BLUE,  TX_RED  , TX_BLUE );
+        DrawGirl (668, 168,  1, 1, t % 20, t % 10, TX_GREEN, TX_BLUE , TX_GREEN);
 
-        DrawTree (200, 300, 0.025  * x, 0.025  * x,  8, 0, 0, 0,
-                  RGB(0, 100 +  2  * x, 0), RGB(0, 100 + 2 * x, 0), RGB(0, 100 + 2 * x, 0));
-        DrawTree (300, 300, 0.02   * x, 0.02   * x,  7, 0, 0, 0,
-                  RGB(0, 100 + 2   * x, 0), RGB(0, 100 + 2 * x, 0), RGB(0, 100 + 2 * x, 0));
-        DrawTree (550, 250, 0.0125 * x, 0.0125 * x,  6, 0, 0, 0,
-                  RGB(0, 100 + 2   * x, 0), RGB(0, 100 + 2 * x, 0), RGB(0, 100 + 2 * x, 0));
+        DrawTree (200, 300, 0.025  * t, 0.025  * t,  8, 0, 0, 0,
+                  RGB(0, 100 +  2  * t, 0), RGB(0, 100 + 2 * t, 0), RGB(0, 100 + 2 * t, 0));
+        DrawTree (300, 300, 0.02   * t, 0.02   * t,  7, 0, 0, 0,
+                  RGB(0, 100 + 2   * t, 0), RGB(0, 100 + 2 * t, 0), RGB(0, 100 + 2 * t, 0));
+        DrawTree (550, 250, 0.0125 * t, 0.0125 * t,  6, 0, 0, 0,
+                  RGB(0, 100 + 2   * t, 0), RGB(0, 100 + 2 * t, 0), RGB(0, 100 + 2 * t, 0));
 
-        x ++;
+        t ++;
         txSleep (TIME);
         txClear ();
         }
@@ -200,20 +200,20 @@ void GirlsLeaves ()
     txPlaySound ("veter.wav");
     txBegin ();
 
-    int x = 0;
-    while (x < 50)
+    int t = 0;
+    while (t < 50)
         {
         DrawBackGround ();
-        DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+        DrawSun  (500, 50, 1, 1, 10 - t % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
-        Trees   (x, x, x, x, 200 + x, 180 - x, 0);
-        Flowers (x, x, x);
+        Trees   (t, t, t, t, 200 + t, 180 - t, 0);
+        Flowers (t, t, t);
 
-        DrawGirl (175 + 12 * x, 275,  1, 1, x % 10, x %  5, TX_RED,   TX_GREEN, TX_BLACK);
-        DrawGirl (350 +  9 * x, 250,  1, 1, x % 15, x %  7, TX_BLUE,  TX_RED  , TX_BLUE );
-        DrawGirl (668 +  2 * x, 168,  1, 1, x % 20, x % 10, TX_GREEN, TX_BLUE , TX_GREEN);
+        DrawGirl (175 + 12 * t, 275,  1, 1, t % 10, t %  5, TX_RED,   TX_GREEN, TX_BLACK);
+        DrawGirl (350 +  9 * t, 250,  1, 1, t % 15, t %  7, TX_BLUE,  TX_RED  , TX_BLUE );
+        DrawGirl (668 +  2 * t, 168,  1, 1, t % 20, t % 10, TX_GREEN, TX_BLUE , TX_GREEN);
 
-        x ++;
+        t ++;
         txSetFillColor (TX_BLACK);
         txSleep (TIME);
         }
@@ -226,39 +226,39 @@ void BirdsBegin ()
     txPlaySound ("birdsbegin.wav");
     txBegin ();
 
-    int x = 0;
-    while (x < 80)
+    int t = 0;
+    while (t < 80)
         {
         DrawBackGround ();
-        DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+        DrawSun  (500, 50, 1, 1, 10 - t % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
-        Trees   (x, x, x, x, 100 + x, x, x);
-        Flowers (x, x, x);
-        Birds   (x, x, x);
+        Trees   (t, t, t, t, 100 + t, t, t);
+        Flowers (t, t, t);
+        Birds   (t, t, t);
 
-        x ++;
+        t ++;
         txSleep (TIME);
         txClear ();
         }
 
-    x = 0;
-    while (x < 400)
+    t = 0;
+    while (t < 400)
         {
         DrawBackGround ();
-        DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
+        DrawSun  (500, 50, 1, 1, 10 - t % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
-        Trees (x, x, x, x, 255, 0, 0);
-        Flowers (x, x, x);
+        Trees (t, t, t, t, 255, 0, 0);
+        Flowers (t, t, t);
 
-        DrawDog  (700 - 4 * x, 470,  1, 1, x %  2, x % 5, TX_BLACK, TX_WHITE, TX_GREY);
-        DrawDog  (750 - 2 * x, 480,  1, 1, x % 10, x % 4, TX_WHITE, TX_BLUE , TX_BLUE);
-        DrawDog  ( 50 + 2 * x, 380, -1, 1, x %  7, x % 3, TX_WHITE, TX_GREY , TX_RED );
+        DrawDog  (700 - 4 * t, 470,  1, 1, t %  2, t % 5, TX_BLACK, TX_WHITE, TX_GREY);
+        DrawDog  (750 - 2 * t, 480,  1, 1, t % 10, t % 4, TX_WHITE, TX_BLUE , TX_BLUE);
+        DrawDog  ( 50 + 2 * t, 380, -1, 1, t %  7, t % 3, TX_WHITE, TX_GREY , TX_RED );
 
-        DrawBird (560, 175 + (x % 10 - 10),  1, 1, x %  5, TX_ORANGE, TX_WHITE, TX_WHITE);
-        DrawBird (210, 150 + (x %  5 -  5), -1, 1, x %  3, TX_WHITE , TX_BLUE , TX_WHITE);
-        DrawBird (300, 100 + (x %  3 -  3),  1, 1, x % 10, TX_RED   , TX_WHITE, TX_BLUE );
+        DrawBird (560, 175 + (t % 10 - 10),  1, 1, t %  5, TX_ORANGE, TX_WHITE, TX_WHITE);
+        DrawBird (210, 150 + (t %  5 -  5), -1, 1, t %  3, TX_WHITE , TX_BLUE , TX_WHITE);
+        DrawBird (300, 100 + (t %  3 -  3),  1, 1, t % 10, TX_RED   , TX_WHITE, TX_BLUE );
 
-        x ++;
+        t ++;
         txSleep (TIME);
         txClear ();
         }
@@ -271,20 +271,20 @@ void BirdsEnd ()
     txPlaySound ("birdsend.wav");
     txBegin ();
 
-    int x = 0;
-    while (x < 200)
+    int t = 0;
+    while (t < 200)
         {
         DrawBackGroundRoadCity ();
-        DrawTrafficlights ( 95, 100, 1, 1, x % 4, TX_GREY);
+        DrawTrafficlights ( 95, 100, 1, 1, t % 4, TX_GREY);
 
-        Trees   (x, x, x, x, 255, 0, 0);
-        Flowers (x, x, x);
+        Trees   (t, t, t, t, 255, 0, 0);
+        Flowers (t, t, t);
 
-        DrawBird (560 + x, 175 - x, -1, 1, x %  5, TX_ORANGE, TX_WHITE, TX_WHITE);
-        DrawBird (210 - x, 150 - x,  1, 1, x %  3, TX_WHITE , TX_BLUE , TX_WHITE);
-        DrawBird (300 + x, 100 - x, -1, 1, x % 10, TX_RED   , TX_WHITE, TX_BLUE );
+        DrawBird (560 + t, 175 - t, -1, 1, t %  5, TX_ORANGE, TX_WHITE, TX_WHITE);
+        DrawBird (210 - t, 150 - t,  1, 1, t %  3, TX_WHITE , TX_BLUE , TX_WHITE);
+        DrawBird (300 + t, 100 - t, -1, 1, t % 10, TX_RED   , TX_WHITE, TX_BLUE );
 
-        x ++;
+        t ++;
         txSleep (TIME);
         txClear ();
         }
@@ -297,16 +297,16 @@ void CarsGo ()
     txPlaySound ("car.wav");
     txBegin ();
 
-    int x = 0;
-    while (x < 300)
+    int t = 0;
+    while (t < 300)
         {
         DrawBackGroundRoadCity ();
-        DrawTrafficlights ( 95, 100, 1, 1, x % 4, TX_GREY);
+        DrawTrafficlights ( 95, 100, 1, 1, t % 4, TX_GREY);
 
-        Trees (x, x, x, x, 50, 50, 50);
-        MoveCars (x);
+        Trees (t, t, t, t, 50, 50, 50);
+        MoveCars (t);
 
-        x ++;
+        t ++;
         txSleep (TIME);
         txClear ();
         }
@@ -319,16 +319,16 @@ void AppearedFactory ()
     txPlaySound ("zavod.wav");
     txBegin ();
 
-    int x = 0;
-    while (x < 200)
+    int t = 0;
+    while (t < 200)
         {
         DrawBackGroundRoadCity ();
 
-        Factories (x);
-        DrawTrafficlights (95, 100, 1, 1, x % 4, TX_GREY);
-        MoveCars (x);
+        Factories (t);
+        DrawTrafficlights (95, 100, 1, 1, t % 4, TX_GREY);
+        MoveCars (t);
 
-        x ++;
+        t ++;
         txSleep (TIME);
         txClear ();
         }
@@ -341,28 +341,28 @@ void TextEnd ()
     txPlaySound ("gta.wav");
     txBegin ();
 
-    int x = 0;
-    while (x < 520)
+    int t = 0;
+    while (t < 520)
         {
         txClear ();
         DrawBackGroundRoadCity ();
 
-        Factories (x);
+        Factories (t);
 
         txSelectFont   ("Times", 50);
         txSetColor     (TX_WHITE);
         txSetFillColor (TX_WHITE);
-        txTextOut      (600 - x, 260, "The job is done: Abdulganieva EV");
+        txTextOut      (600 - t, 260, "The job is done: Abdulganieva EV");
         txSetColor     (TX_ORANGE);
         txSetFillColor (TX_ORANGE);
-        txTextOut      (598 - x, 260, "The job is done: Abdulganieva EV");
+        txTextOut      (598 - t, 260, "The job is done: Abdulganieva EV");
 
         txSelectFont   ("Times", 20);
-        txTextOut      (650 - x, 315 + x % 5, "welcome to Togliatti");
+        txTextOut      (650 - t, 315 + t % 5, "welcome to Togliatti");
 
-        BirdsFinal (x, x);
+        BirdsFinal (t, t);
 
-        x ++;
+        t ++;
         txSleep (TIME);
         }
     txEnd ();
