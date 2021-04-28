@@ -54,8 +54,8 @@ void Flowers           (int Disclosure, int UpSheet, int Swinging);
 
 void Birds             (int x, int y, int UpWing);
 
-void DrawBlackGround         ();
-void DrawBlackGroundRoad     ();
+void DrawBackGround         ();
+void DrawBackGroundRoad     ();
 void GirlsAlong              ();
 void TreesGrowing            ();
 void TextBegin               ();
@@ -65,7 +65,7 @@ void BirdsBegin              ();
 void BirdsEnd                ();
 void CarsGo                  ();
 void AppearedFactory         ();
-void DrawBlackGroundRoadCity ();
+void DrawBackGroundRoadCity ();
 
 int main ()
     {
@@ -92,7 +92,7 @@ void TextBegin ()
     int x = 0;
     while (x < 150)
         {
-        DrawBlackGround ();
+        DrawBackGround ();
         DrawSun (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
         Flowers (x, x, x);
@@ -115,7 +115,7 @@ void TextBegin ()
     x = 0;
     while (x < 100)
         {
-        DrawBlackGround ();
+        DrawBackGround ();
         DrawSun (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
         Flowers (x, x, x);
@@ -144,7 +144,7 @@ void GirlsAlong ()
     int x = 0;
     while (x < 700)
         {
-        DrawBlackGround ();
+        DrawBackGround ();
         DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
         Flowers (x, x, x);
@@ -170,7 +170,7 @@ void TreesGrowing ()
     int x = 0;
     while (x < 40)
         {
-        DrawBlackGround ();
+        DrawBackGround ();
         DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
         Flowers (x, x, x);
@@ -203,7 +203,7 @@ void GirlsLeaves ()
     int x = 0;
     while (x < 50)
         {
-        DrawBlackGround ();
+        DrawBackGround ();
         DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
         Trees   (x, x, x, x, 200 + x, 180 - x, 0);
@@ -229,7 +229,7 @@ void BirdsBegin ()
     int x = 0;
     while (x < 80)
         {
-        DrawBlackGround ();
+        DrawBackGround ();
         DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
         Trees   (x, x, x, x, 100 + x, x, x);
@@ -244,7 +244,7 @@ void BirdsBegin ()
     x = 0;
     while (x < 400)
         {
-        DrawBlackGround ();
+        DrawBackGround ();
         DrawSun  (500, 50, 1, 1, 10 - x % 5, TX_YELLOW, TX_BLUE, TX_WHITE);
 
         Trees (x, x, x, x, 255, 0, 0);
@@ -274,7 +274,7 @@ void BirdsEnd ()
     int x = 0;
     while (x < 200)
         {
-        DrawBlackGroundRoadCity ();
+        DrawBackGroundRoadCity ();
         DrawTrafficlights ( 95, 100, 1, 1, x % 4, TX_GREY);
 
         Trees   (x, x, x, x, 255, 0, 0);
@@ -300,7 +300,7 @@ void CarsGo ()
     int x = 0;
     while (x < 300)
         {
-        DrawBlackGroundRoadCity ();
+        DrawBackGroundRoadCity ();
         DrawTrafficlights ( 95, 100, 1, 1, x % 4, TX_GREY);
 
         Trees (x, x, x, x, 50, 50, 50);
@@ -322,7 +322,7 @@ void AppearedFactory ()
     int x = 0;
     while (x < 200)
         {
-        DrawBlackGroundRoadCity ();
+        DrawBackGroundRoadCity ();
 
         Factories (x);
         DrawTrafficlights (95, 100, 1, 1, x % 4, TX_GREY);
@@ -345,7 +345,7 @@ void TextEnd ()
     while (x < 520)
         {
         txClear ();
-        DrawBlackGroundRoadCity ();
+        DrawBackGroundRoadCity ();
 
         Factories (x);
 
@@ -749,7 +749,7 @@ void DrawFlower (int x, int y, double sizeX, double sizeY, int Disclosure,
     txPolygon (bud, 10);
     }
 
-void DrawBlackGround ()
+void DrawBackGround ()
     {
     txSetColor     (RGB (0, 0,   200));
     txSetFillColor (RGB (0, 0,   200));
@@ -759,7 +759,7 @@ void DrawBlackGround ()
     txRectangle    (0, 200, 800, 600 );
     }
 
-void DrawBlackGroundRoad ()
+void DrawBackGroundRoad ()
     {
     txSetColor     (RGB (0, 0,   200));
     txSetFillColor (RGB (0, 0,   200));
@@ -770,7 +770,7 @@ void DrawBlackGroundRoad ()
     DrawMotorWay   (0, 400,   1,   1, 10, TX_DARKGREY, TX_WHITE);
     }
 
-void DrawBlackGroundRoadCity ()
+void DrawBackGroundRoadCity ()
     {
     txSetColor     (RGB (0, 0,   200));
     txSetFillColor (RGB (0, 0,   200));
