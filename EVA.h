@@ -2,16 +2,20 @@
 
 # include "TXlib.h"
 
+const int TIME = 1;
 
 void DrawMotorWay      (int x, int y, double sizeX, double sizeY, int width,
                         COLORREF colorWay, COLORREF colorBand);
 
 void DrawTrafficlights (int x, int y, double sizeX, double sizeY,
-                        int colorHeadlight, COLORREF colorMain);
+                        COLORREF colorMain, int Red, int Green, int Blue);
 
 void DrawTree          (int x, int y, double sizeX, double sizeY, int DFruit,
                         int WobbleCrown, int HeightTrunk, int HeightCrown,
                         COLORREF colorFruit1, COLORREF colorFruit2, COLORREF colorFruit3);
+
+void DrawFlower        (int x, int y, double sizeX, double sizeY, int Disclosure,
+                        int UpSheet, int Swinging, COLORREF colorFlower);
 
 void DrawSun           (int x, int y, double sizeX, double sizeY, int Beamlength,
                         COLORREF colorSun, COLORREF colorCloud, COLORREF colorEye);
@@ -31,42 +35,26 @@ void DrawGirl          (int x, int y, double sizeX, double sizeY, int HandUp,int
 void DrawFactory       (int x, int y, double sizeX, double sizeY, int PipeHeight,
                         COLORREF colorFactory);
 
-void DrawFlower        (int x, int y, double sizeX, double sizeY, int Disclosure,
-                        int UpSheet, int Swinging, COLORREF colorFlower);
+void City              (int x, int y, double sizeX, double sizeY, COLORREF colorCity);
 
-void DrawFlower (int x, int y, double sizeX, double sizeY, int Disclosure,
-                 int UpSheet, int Swinging, COLORREF colorFlower)
-    {
-    txSetColor     (RGB (50, 200, 50));
-    txSetFillColor (RGB (50, 200, 50));
-    txLine (x, y, x + Swinging, y-5 * sizeY);
-    POINT sheet [] =   {{x +             Swinging, y - 1 * sizeY          },
-                        {x + 2 * sizeX + Swinging, y - 3 * sizeY + UpSheet},
-                        {x + 3 * sizeX + Swinging, y - 3 * sizeY + UpSheet},
-                        {x + 3 * sizeX + Swinging, y - 2 * sizeY + UpSheet},
-                        {x +             Swinging, y - 1 * sizeY          }};
-    txPolygon (sheet, 5);
 
-    POINT pedicel [] = {{x +             Swinging, y - 5 * sizeY},
-                        {x - 1 * sizeX + Swinging, y - 6 * sizeY},
-                        {x + 1 * sizeX + Swinging, y - 6 * sizeY},
-                        {x +             Swinging, y - 5 * sizeY}};
-    txPolygon (pedicel, 4);
-
-    txSetColor     (colorFlower);
-    txSetFillColor (colorFlower);
-    POINT bud [] = {{x - 1 * sizeX + Swinging             , y -  6 * sizeY},
-                    {x - 2 * sizeX + Swinging             , y -  7 * sizeY},
-                    {x - 2 * sizeX + Disclosure + Swinging, y - 10 * sizeY},
-                    {x - 1 * sizeX + Swinging             , y -  9 * sizeY},
-                    {x             + Swinging             , y - 10 * sizeY},
-                    {x + 1 * sizeX + Swinging             , y -  9 * sizeY},
-                    {x + 2 * sizeX - Disclosure + Swinging, y - 10 * sizeY},
-                    {x + 2 * sizeX + Swinging             , y -  7 * sizeY},
-                    {x + 1 * sizeX + Swinging             , y -  6 * sizeY},
-                    {x - 1 * sizeX + Swinging             , y -  6 * sizeY}};
-    txPolygon (bud, 10);
-    }
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует дорогу и пешеходный переход
+//!
+//! @param x         координата левого верхнего угла дороги
+//! @param y         координата левого верхнего угла дороги
+//! @param sizeX     Размер дороги <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY     Размер дороги <i>(коэффициент сжатия по вертикали)</i>
+//! @param width     Ширина полос
+//! @param colorWay  Цвет дороги
+//! @param colorBand Цвет полос
+//!
+//! @par
+//! @code
+//!                  DrawMotorWay (0, 400, 1, 1, 10, TX_DARKGREY, TX_WHITE);
+//! @endcode
+//}----------------------------------------------------------------------------
 
 
 void DrawMotorWay (int x, int y, double sizeX, double sizeY, int width,
@@ -83,46 +71,38 @@ void DrawMotorWay (int x, int y, double sizeX, double sizeY, int width,
     txRectangle (x + 175 * sizeX, y + 87 * sizeY, x + 300 * sizeX, y + 87 * sizeY + width);
     }
 
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует светофор с одним глазом
+//!
+//! @param x         координата левого верхнего угла светофора
+//! @param y         координата левого верхнего угла светофора
+//! @param sizeX     Размер светофора <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY     Размер светофора <i>(коэффициент сжатия по вертикали)</i>
+//! @param colorMain Цвет светофора
+//! @param Red       Интенсивность красного <i>(в диапазоне от 0 до 255)</i>
+//! @param Green     Интенсивность зеленого <i>(в диапазоне от 0 до 255)</i>
+//! @param Blue      Интенсивность синего <i>(в диапазоне от 0 до 255)</i>
+//!
+//! @warning         Параметры для получения красного (1, 0, 0), желтого (1, 1, 0), зеленого (0, 1, 0)
+//!
+//! @par
+//! @code
+//!                  DrawTrafficlights (95, 200, 1, 1, TX_DARKGREY, 255, 0, 0);
+//! @endcode
+//}----------------------------------------------------------------------------
+
 void DrawTrafficlights (int x, int y, double sizeX, double sizeY,
-                        int colorHeadlight, COLORREF colorMain)
+                        COLORREF colorMain, int Red, int Green, int Blue)
     {
-    txSetColor     (colorMain);
+    txSetColor     (TX_BLACK);
     txSetFillColor (colorMain);
-    txRectangle ( x+ 22 * sizeX, y + 150 * sizeY, x + 28 * sizeX, y + 300 * sizeY);
-    txRectangle (x,              y,               x + 50 * sizeX, y + 150 * sizeY);
+    txRectangle (x + 22 * sizeX, y +  50 * sizeY, x + 28 * sizeX, y + 200 * sizeY);
+    txRectangle (x             , y              , x + 50 * sizeX, y +  50 * sizeY);
 
-    txSetColor     (TX_RED);
-    txSetFillColor (TX_RED);
-    txCircle (x + 25 * sizeX, y + 25 * sizeY, 12 * sizeX);
-
-    txSetColor     (TX_GREEN);
-    txSetFillColor (TX_GREEN);
-    txCircle (x + 25 * sizeX, y + 125 * sizeY, 12 * sizeX);
-
-    txSetColor     (TX_YELLOW);
-    txSetFillColor (TX_YELLOW);
-    txCircle (x + 25 * sizeX, y +  75 * sizeY, 12 * sizeX);
-
-    if (colorHeadlight == 1)
-        {
-        txSetColor     (TX_RED);
-        txSetFillColor (TX_RED);
-        txCircle (x + 25 * sizeX, y + 25 * sizeY, 20 * sizeX);
-        }
-
-    if (colorHeadlight == 2)
-        {
-        txSetColor     (TX_GREEN);
-        txSetFillColor (TX_GREEN);
-        txCircle (x + 25 * sizeX, y + 125 * sizeY, 20 * sizeX);
-        }
-
-    if (colorHeadlight == 3)
-        {
-        txSetColor     (TX_YELLOW);
-        txSetFillColor (TX_YELLOW);
-        txCircle (x + 25 * sizeX, y +  75 * sizeY, 20 * sizeX);
-        }
+    txSetColor     (RGB (Red, Green, Blue));
+    txSetFillColor (RGB (Red, Green, Blue));
+    txCircle (x + 25 * sizeX, y +  25 * sizeY, 15 * sizeX);
     }
 
 void DrawCar (int x, int y, double sizeX, double sizeY,int RWheel,
@@ -214,32 +194,32 @@ void DrawFactory (int x, int y, double sizeX, double sizeY, int PipeHeight,
     {
     txSetColor     (colorFactory);
     txSetFillColor (colorFactory);
-    POINT factory [] = {{x       * sizeX, y      * sizeY},
-                        {x       * sizeX, y - 10 * sizeY},
-                        {x +  10 * sizeX, y - 10 * sizeY},
-                        {x +  10 * sizeX, y - 20 * sizeY},
-                        {x +  30 * sizeX, y - 20 * sizeY},
+    POINT factory [] = {{x       * sizeX, y      * sizeY             },
+                        {x       * sizeX, y - 10 * sizeY             },
+                        {x +  10 * sizeX, y - 10 * sizeY             },
+                        {x +  10 * sizeX, y - 20 * sizeY             },
+                        {x +  30 * sizeX, y - 20 * sizeY             },
                         {x +  30 * sizeX, y - 60 * sizeY - PipeHeight},
                         {x +  40 * sizeX, y - 60 * sizeY - PipeHeight},
-                        {x +  40 * sizeX, y - 20 * sizeY},
-                        {x +  50 * sizeX, y - 20 * sizeY},
-                        {x +  50 * sizeX, y - 30 * sizeY},
-                        {x +  60 * sizeX, y - 30 * sizeY},
-                        {x +  60 * sizeX, y - 40 * sizeY},
-                        {x +  80 * sizeX, y - 40 * sizeY},
+                        {x +  40 * sizeX, y - 20 * sizeY             },
+                        {x +  50 * sizeX, y - 20 * sizeY             },
+                        {x +  50 * sizeX, y - 30 * sizeY             },
+                        {x +  60 * sizeX, y - 30 * sizeY             },
+                        {x +  60 * sizeX, y - 40 * sizeY             },
+                        {x +  80 * sizeX, y - 40 * sizeY             },
                         {x +  80 * sizeX, y - 80 * sizeY - PipeHeight},
                         {x +  90 * sizeX, y - 80 * sizeY - PipeHeight},
-                        {x +  90 * sizeX, y - 80 * sizeY},
-                        {x +  90 * sizeX, y - 40 * sizeY},
-                        {x + 110 * sizeX, y - 40 * sizeY},
-                        {x + 110 * sizeX, y - 30 * sizeY},
-                        {x + 120 * sizeX, y - 30 * sizeY},
-                        {x + 120 * sizeX, y - 20 * sizeY},
-                        {x + 130 * sizeX, y - 20 * sizeY},
-                        {x + 130 * sizeX, y - 10 * sizeY},
-                        {x + 140 * sizeX, y - 10 * sizeY},
-                        {x + 140 * sizeX, y      * sizeY},
-                        {x       * sizeX, y      * sizeY}};
+                        {x +  90 * sizeX, y - 80 * sizeY             },
+                        {x +  90 * sizeX, y - 40 * sizeY             },
+                        {x + 110 * sizeX, y - 40 * sizeY             },
+                        {x + 110 * sizeX, y - 30 * sizeY             },
+                        {x + 120 * sizeX, y - 30 * sizeY             },
+                        {x + 120 * sizeX, y - 20 * sizeY             },
+                        {x + 130 * sizeX, y - 20 * sizeY             },
+                        {x + 130 * sizeX, y - 10 * sizeY             },
+                        {x + 140 * sizeX, y - 10 * sizeY             },
+                        {x + 140 * sizeX, y      * sizeY             },
+                        {x       * sizeX, y      * sizeY             }};
     txPolygon (factory, 26);
     }
 
@@ -359,24 +339,51 @@ void DrawDog (int x, int y, double sizeX, double sizeY, int TailShift, int EarSh
     txPolygon (lapa, 7);
     }
 
-void DrawBlackGround ()
+void DrawFlower (int x, int y, double sizeX, double sizeY, int Disclosure,
+                 int UpSheet, int Swinging, COLORREF colorFlower)
     {
-    txSetColor     (RGB (0, 0,   200));
-    txSetFillColor (RGB (0, 0,   200));
-    txRectangle    (0,   0, 800, 200 );
-    txSetColor     (RGB (0, 100,   0));
-    txSetFillColor (RGB (0, 100,   0));
-    txRectangle    (0, 200, 800, 600 );
+    txSetColor     (RGB (50, 200, 50));
+    txSetFillColor (RGB (50, 200, 50));
+    txLine (x, y, x + Swinging, y-5 * sizeY);
+    POINT sheet [] =   {{x +             Swinging, y - 1 * sizeY          },
+                        {x + 2 * sizeX + Swinging, y - 3 * sizeY + UpSheet},
+                        {x + 3 * sizeX + Swinging, y - 3 * sizeY + UpSheet},
+                        {x + 3 * sizeX + Swinging, y - 2 * sizeY + UpSheet},
+                        {x +             Swinging, y - 1 * sizeY          }};
+    txPolygon (sheet, 5);
+
+    POINT pedicel [] = {{x +             Swinging, y - 5 * sizeY},
+                        {x - 1 * sizeX + Swinging, y - 6 * sizeY},
+                        {x + 1 * sizeX + Swinging, y - 6 * sizeY},
+                        {x +             Swinging, y - 5 * sizeY}};
+    txPolygon (pedicel, 4);
+
+    txSetColor     (colorFlower);
+    txSetFillColor (colorFlower);
+    POINT bud [] = {{x - 1 * sizeX + Swinging             , y -  6 * sizeY},
+                    {x - 2 * sizeX + Swinging             , y -  7 * sizeY},
+                    {x - 2 * sizeX + Disclosure + Swinging, y - 10 * sizeY},
+                    {x - 1 * sizeX + Swinging             , y -  9 * sizeY},
+                    {x             + Swinging             , y - 10 * sizeY},
+                    {x + 1 * sizeX + Swinging             , y -  9 * sizeY},
+                    {x + 2 * sizeX - Disclosure + Swinging, y - 10 * sizeY},
+                    {x + 2 * sizeX + Swinging             , y -  7 * sizeY},
+                    {x + 1 * sizeX + Swinging             , y -  6 * sizeY},
+                    {x - 1 * sizeX + Swinging             , y -  6 * sizeY}};
+    txPolygon (bud, 10);
     }
 
-void DrawBlackGroundRoad ()
+void City (int x, int y, double sizeX, double sizeY, COLORREF colorCity)
     {
-    txSetColor     (RGB (0, 0,   200));
-    txSetFillColor (RGB (0, 0,   200));
-    txRectangle    (0,   0, 800, 200 );
-    txSetColor     (RGB (0, 100,   0));
-    txSetFillColor (RGB (0, 100,   0));
-    txRectangle    (0, 200, 800, 600 );
-    DrawMotorWay   (0, 400,   1,   1, 10, TX_DARKGREY, TX_WHITE);
+    txSetColor     (colorCity);
+    txSetFillColor (colorCity);
+    txRectangle ( 50 + x * sizeX, 50 + y * sizeY, 100 + x * sizeX, 200 + y * sizeY);
+    txRectangle (125 + x * sizeX, 50 + y * sizeY, 175 + x * sizeX, 200 + y * sizeY);
+    txRectangle (200 + x * sizeX, 25 + y * sizeY, 250 + x * sizeX, 200 + y * sizeY);
+    txRectangle (275 + x * sizeX, 75 + y * sizeY, 325 + x * sizeX, 200 + y * sizeY);
+    txRectangle (350 + x * sizeX, 75 + y * sizeY, 400 + x * sizeX, 200 + y * sizeY);
+    txRectangle (425 + x * sizeX, 75 + y * sizeY, 475 + x * sizeX, 200 + y * sizeY);
+    txRectangle (500 + x * sizeX, 25 + y * sizeY, 550 + x * sizeX, 200 + y * sizeY);
+    txRectangle (575 + x * sizeX, 50 + y * sizeY, 625 + x * sizeX, 200 + y * sizeY);
+    txRectangle (675 + x * sizeX, 75 + y * sizeY, 725 + x * sizeX, 200 + y * sizeY);
     }
-
