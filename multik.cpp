@@ -12,7 +12,7 @@ void DrawMotorWay      (int x, int y, double sizeX, double sizeY, int width,
                         COLORREF colorWay, COLORREF colorBand);
 
 void DrawTrafficlights (int x, int y, double sizeX, double sizeY,
-                        int colorHeadlight, COLORREF colorMain);
+                        COLORREF colorMain, int Red, int Green, int Blue);
 
 void DrawTree          (int x, int y, double sizeX, double sizeY, int DFruit,
                         int WobbleCrown, int HeightTrunk, int HeightCrown,
@@ -275,7 +275,7 @@ void BirdsEnd ()
     while (t < 200)
         {
         DrawBackGroundRoadCity ();
-        DrawTrafficlights ( 95, 100, 1, 1, t % 4, TX_GREY);
+        DrawTrafficlights ( 95, 200, 1, 1, TX_DARKGREY, 255, 0, 0);
 
         Trees   (t, t, t, t, 255, 0, 0);
         Flowers (t, t, t);
@@ -301,7 +301,7 @@ void CarsGo ()
     while (t < 300)
         {
         DrawBackGroundRoadCity ();
-        DrawTrafficlights ( 95, 100, 1, 1, t % 4, TX_GREY);
+        DrawTrafficlights ( 95, 200, 1, 1, TX_DARKGREY, 0, 255, 0);
 
         Trees (t, t, t, t, 50, 50, 50);
         MoveCars (t);
@@ -325,7 +325,7 @@ void AppearedFactory ()
         DrawBackGroundRoadCity ();
 
         Factories (t);
-        DrawTrafficlights (95, 100, 1, 1, t % 4, TX_GREY);
+        DrawTrafficlights (95, 200, 1, 1, TX_DARKGREY, 255, 255, 0);
         MoveCars (t);
 
         t ++;
@@ -440,45 +440,16 @@ void DrawMotorWay (int x, int y, double sizeX, double sizeY, int width,
     }
 
 void DrawTrafficlights (int x, int y, double sizeX, double sizeY,
-                        int colorHeadlight, COLORREF colorMain)
+                        COLORREF colorMain, int Red, int Green, int Blue)
     {
-    txSetColor     (colorMain);
+    txSetColor     (TX_BLACK);
     txSetFillColor (colorMain);
-    txRectangle ( x+ 22 * sizeX, y + 150 * sizeY, x + 28 * sizeX, y + 300 * sizeY);
-    txRectangle (x,              y,               x + 50 * sizeX, y + 150 * sizeY);
+    txRectangle (x + 22 * sizeX, y +  50 * sizeY, x + 28 * sizeX, y + 200 * sizeY);
+    txRectangle (x             , y              , x + 50 * sizeX, y +  50 * sizeY);
 
-    txSetColor     (TX_RED);
-    txSetFillColor (TX_RED);
-    txCircle (x + 25 * sizeX, y + 25 * sizeY, 12 * sizeX);
-
-    txSetColor     (TX_GREEN);
-    txSetFillColor (TX_GREEN);
-    txCircle (x + 25 * sizeX, y + 125 * sizeY, 12 * sizeX);
-
-    txSetColor     (TX_YELLOW);
-    txSetFillColor (TX_YELLOW);
-    txCircle (x + 25 * sizeX, y +  75 * sizeY, 12 * sizeX);
-
-    if (colorHeadlight == 1)
-        {
-        txSetColor     (TX_RED);
-        txSetFillColor (TX_RED);
-        txCircle (x + 25 * sizeX, y + 25 * sizeY, 20 * sizeX);
-        }
-
-    if (colorHeadlight == 2)
-        {
-        txSetColor     (TX_GREEN);
-        txSetFillColor (TX_GREEN);
-        txCircle (x + 25 * sizeX, y + 125 * sizeY, 20 * sizeX);
-        }
-
-    if (colorHeadlight == 3)
-        {
-        txSetColor     (TX_YELLOW);
-        txSetFillColor (TX_YELLOW);
-        txCircle (x + 25 * sizeX, y +  75 * sizeY, 20 * sizeX);
-        }
+    txSetColor     (RGB (Red, Green, Blue));
+    txSetFillColor (RGB (Red, Green, Blue));
+    txCircle (x + 25 * sizeX, y +  25 * sizeY, 15 * sizeX);
     }
 
 void DrawCar (int x, int y, double sizeX, double sizeY,int RWheel,
