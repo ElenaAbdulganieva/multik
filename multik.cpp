@@ -36,7 +36,7 @@ void DrawBackGroundRoadCity  ();
 
 int main ()
     {
-    txCreateWindow (WIDTH,HEIGHT);
+    txCreateWindow (WINDOW_WIDTH,WINDOW_HEIGHT);
 
     TextBegin       ();
     GirlsAlong      ();
@@ -76,7 +76,7 @@ void TextBegin ()
         txTextOut      (600 - 2 * t, 50 + 2 * t, "company represents");
 
         t ++;
-        txSleep (TIME);
+        txSleep (DELAY_TIME);
         }
 
     t = 0;
@@ -99,7 +99,7 @@ void TextBegin ()
         txTextOut      (300, 350, "company represents");
 
         t ++;
-        txSleep (TIME);
+        txSleep (DELAY_TIME);
         }
     txEnd ();
     }
@@ -122,7 +122,7 @@ void GirlsAlong ()
 
         t ++;
         txSetFillColor (TX_BLACK);
-        txSleep (TIME);
+        txSleep (DELAY_TIME);
         txClear ();
         }
     txEnd ();
@@ -154,7 +154,7 @@ void TreesGrowing ()
                   RGB(0, 100 + 2   * t, 0), RGB(0, 100 + 2 * t, 0), RGB(0, 100 + 2 * t, 0));
 
         t ++;
-        txSleep (TIME);
+        txSleep (DELAY_TIME);
         txClear ();
         }
     txSleep (100);
@@ -182,7 +182,7 @@ void GirlsLeaves ()
 
         t ++;
         txSetFillColor (TX_BLACK);
-        txSleep (TIME);
+        txSleep (DELAY_TIME);
         }
     txEnd ();
     txPlaySound ();
@@ -204,7 +204,7 @@ void BirdsBegin ()
         Birds   (t, t, t);
 
         t ++;
-        txSleep (TIME);
+        txSleep (DELAY_TIME);
         txClear ();
         }
 
@@ -226,7 +226,7 @@ void BirdsBegin ()
         DrawBird (300, 100 + (t %  3 -  3),  1, 1, t % 10, TX_RED   , TX_WHITE, TX_BLUE );
 
         t ++;
-        txSleep (TIME);
+        txSleep (DELAY_TIME);
         txClear ();
         }
     txEnd ();
@@ -252,7 +252,7 @@ void BirdsEnd ()
         DrawBird (300 + t, 100 - t, -1, 1, t % 10, TX_RED   , TX_WHITE, TX_BLUE );
 
         t ++;
-        txSleep (TIME);
+        txSleep (DELAY_TIME);
         txClear ();
         }
     txEnd ();
@@ -274,7 +274,7 @@ void CarsGo ()
         MoveCars (t);
 
         t ++;
-        txSleep (TIME);
+        txSleep (DELAY_TIME);
         txClear ();
         }
     txEnd ();
@@ -296,7 +296,7 @@ void AppearedFactory ()
         MoveCars (t);
 
         t ++;
-        txSleep (TIME);
+        txSleep (DELAY_TIME);
         txClear ();
         }
     txEnd ();
@@ -330,7 +330,7 @@ void TextEnd ()
         BirdsFinal (t, t);
 
         t ++;
-        txSleep (TIME);
+        txSleep (DELAY_TIME);
         }
     txEnd ();
     txPlaySound ();
