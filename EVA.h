@@ -2,8 +2,6 @@
 
 # include "TXlib.h"
 
-const int TIME = 1;
-
 void DrawMotorWay      (int x, int y, double sizeX, double sizeY, int width,
                         COLORREF colorWay, COLORREF colorBand);
 
@@ -105,6 +103,26 @@ void DrawTrafficlights (int x, int y, double sizeX, double sizeY,
     txCircle (x + 25 * sizeX, y +  25 * sizeY, 15 * sizeX);
     }
 
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует автомобиль
+//!
+//! @param x             координата левого верхнего угла автомобиля
+//! @param y             координата левого верхнего угла автомобиля
+//! @param sizeX         Размер автомобиля <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY         Размер автомобиля <i>(коэффициент сжатия по вертикали)</i>
+//! @param RWheel        Радиус колеса
+//! @param colorCar      Цвет автомобиля
+//! @param color Wheel   Цвет колеса
+//! @param DistanceWheel Изменение расстояния между колесами <i>(по умолчанию 150 пик)</i>
+//!
+//! @warning             Параметры для получения красного (1, 0, 0), желтого (1, 1, 0), зеленого (0, 1, 0)
+//!
+//! @par
+//! @code
+//!                      DrawCar (800, 375, 1, 1, 20, TX_RED, TX_ORANGE, 20);
+//! @endcode
+//}----------------------------------------------------------------------------
 void DrawCar (int x, int y, double sizeX, double sizeY,int RWheel,
               COLORREF colorCar, COLORREF colorWheel, int DistanceWheel)
     {
