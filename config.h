@@ -1,5 +1,5 @@
 // config
 
-const int TIME = 1;
-const int WIDTH = 800;
-const int HEIGHT = 600;
+const int DELAY_TIME = 1;
+const int WINDOW_WIDTH = 800;
+const int WINDOW_HEIGHT = 600;
