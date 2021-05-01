@@ -351,6 +351,25 @@ void DrawSun (int x, int y, double sizeX, double sizeY, int Beamlength,
     txEllipse (x - 150 * sizeX, y + 25 * sizeY, x - 50 * sizeX,  y + 75 * sizeY);
     }
 
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует птицу
+//!
+//! @param x            координата основания шеи
+//! @param y            координата основания шеи
+//! @param sizeX        Размер птицы <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY        Размер птицы <i>(коэффициент сжатия по вертикали)</i>
+//! @param PositionWing Величина изменения подъема крыла
+//! @param colorWing    Цвет крыльев
+//! @param colorBody    Цвет тела
+//! @param colorHead    Цвет головы
+//!
+//! @par              Пример использования:
+//! @code
+//!                   DrawBird (800, 175, 1, 1, 5, TX_ORANGE, TX_WHITE, TX_WHITE);
+//! @endcode
+//}----------------------------------------------------------------------------
+
 void DrawBird (int x, int y, double sizeX, double sizeY, int PositionWing,
                COLORREF colorWing, COLORREF colorBody, COLORREF colorHead)
     {
