@@ -48,12 +48,11 @@ void City              (int x, int y, double sizeX, double sizeY, COLORREF color
 //! @param colorWay  Цвет дороги
 //! @param colorBand Цвет полос
 //!
-//! @par
+//! @par             Пример использования:
 //! @code
 //!                  DrawMotorWay (0, 400, 1, 1, 10, TX_DARKGREY, TX_WHITE);
 //! @endcode
 //}----------------------------------------------------------------------------
-
 
 void DrawMotorWay (int x, int y, double sizeX, double sizeY, int width,
                    COLORREF colorWay, COLORREF colorBand)
@@ -84,7 +83,7 @@ void DrawMotorWay (int x, int y, double sizeX, double sizeY, int width,
 //!
 //! @warning         Параметры для получения красного (1, 0, 0), желтого (1, 1, 0), зеленого (0, 1, 0)
 //!
-//! @par
+//! @par             Пример использования:
 //! @code
 //!                  DrawTrafficlights (95, 200, 1, 1, TX_DARKGREY, 255, 0, 0);
 //! @endcode
@@ -113,16 +112,15 @@ void DrawTrafficlights (int x, int y, double sizeX, double sizeY,
 //! @param sizeY         Размер автомобиля <i>(коэффициент сжатия по вертикали)</i>
 //! @param RWheel        Радиус колеса
 //! @param colorCar      Цвет автомобиля
-//! @param color Wheel   Цвет колеса
+//! @param colorWheel    Цвет колеса
 //! @param DistanceWheel Изменение расстояния между колесами <i>(по умолчанию 150 пик)</i>
 //!
-//! @warning             Параметры для получения красного (1, 0, 0), желтого (1, 1, 0), зеленого (0, 1, 0)
-//!
-//! @par
+//! @par                 Пример использования:
 //! @code
 //!                      DrawCar (800, 375, 1, 1, 20, TX_RED, TX_ORANGE, 20);
 //! @endcode
 //}----------------------------------------------------------------------------
+
 void DrawCar (int x, int y, double sizeX, double sizeY,int RWheel,
               COLORREF colorCar, COLORREF colorWheel, int DistanceWheel)
     {
@@ -144,6 +142,26 @@ void DrawCar (int x, int y, double sizeX, double sizeY,int RWheel,
     txCircle (x +  50 * sizeX + DistanceWheel, y + 50 * sizeY, 10 * sizeY);
     txCircle (x + 200 * sizeX - DistanceWheel, y + 50 * sizeY, 10 * sizeY);
     }
+
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует девочку
+//!
+//! @param x             координата основания шеи
+//! @param y             координата основания шеи
+//! @param sizeX         Размер девочки <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY         Размер девочки <i>(коэффициент сжатия по вертикали)</i>
+//! @param HandUp        Величина изменения подъема рук
+//! @param LegRight      Величина изменения положения правой ноги
+//! @param colorDress    Цвет платья
+//! @param colorLipstick Цвет помады
+//! @param colorEye      Цвет глаз
+//!
+//! @par                 Пример использования:
+//! @code
+//!                      DrawGirl (175, 275, 1, 1, 10, 5, TX_RED, TX_GREEN, TX_BLACK);
+//! @endcode
+//}----------------------------------------------------------------------------
 
 void DrawGirl (int x, int y, double sizeX, double sizeY, int HandUp, int LegRight,
                COLORREF colorDress, COLORREF colorLipstick, COLORREF colorEye)
@@ -171,6 +189,29 @@ void DrawGirl (int x, int y, double sizeX, double sizeY, int HandUp, int LegRigh
                       {x + 25 * sizeX, y + 88 * sizeY}, {x, y}};
     txPolygon (dress, 3);
     }
+
+
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует фруктовое дерево
+//!
+//! @param x           координата основания ствола
+//! @param y           координата основания ствола
+//! @param sizeX       Размер дерева <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY       Размер дерева <i>(коэффициент сжатия по вертикали)</i>
+//! @param DFruit      Радиус фрукта
+//! @param WobbleCrown Величина колебания кроны дерева
+//! @param HeightTrunk Величина изменения высоты ствола
+//! @param HeightCrown Величина изменения высоты кроны
+//! @param colorFruit1 Цвет фрукта
+//! @param colorFruit2 Цвет фрукта
+//! @param colorFruit3 Цвет фрукта
+//!
+//! @par               Пример использования:
+//! @code
+//!                    DrawTree (200, 300, 1, 1, 8, 5, 0, 5, TX_RED, TX_ORANGE, TX_YELLOW);
+//! @endcode
+//}----------------------------------------------------------------------------
 
 void DrawTree (int x, int y, double sizeX, double sizeY, int DFruit,
                int WobbleCrown, int HeightTrunk, int HeightCrown,
