@@ -248,6 +248,23 @@ void DrawTree (int x, int y, double sizeX, double sizeY, int DFruit,
     txCircle (x              + WobbleCrown, y - 175 * sizeY, DFruit * sizeY);
     }
 
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует завод
+//!
+//! @param x            координата левого нижнего угла здания
+//! @param y            координата левого нижнего угла здания
+//! @param sizeX        Размер здания <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY        Размер здания <i>(коэффициент сжатия по вертикали)</i>
+//! @param PipeHeight   Величина изменения высоты трубы
+//! @param colorFactory Цвет здания
+//!
+//! @par                Пример использования:
+//! @code
+//!                     DrawFactory (100, 200, 1, 1, 3, TX_GREY);
+//! @endcode
+//}----------------------------------------------------------------------------
+
 void DrawFactory (int x, int y, double sizeX, double sizeY, int PipeHeight,
                   COLORREF colorFactory)
     {
@@ -281,6 +298,25 @@ void DrawFactory (int x, int y, double sizeX, double sizeY, int PipeHeight,
                         {x       * sizeX, y      * sizeY             }};
     txPolygon (factory, 26);
     }
+
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует солнце и облака
+//!
+//! @param x          координата центра солнца
+//! @param y          координата центра солнца
+//! @param sizeX      Размер солнца <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY      Размер солнца <i>(коэффициент сжатия по вертикали)</i>
+//! @param Beamlength Длина луча
+//! @param сolorSun   Цвет солнца
+//! @param colorCloud Цвет облака
+//! @param colorEye   Цвет глаз
+//!
+//! @par              Пример использования:
+//! @code
+//!                   DrawSun (500, 50, 1, 1, 10, TX_YELLOW, TX_BLUE, TX_WHITE);
+//! @endcode
+//}----------------------------------------------------------------------------
 
 void DrawSun (int x, int y, double sizeX, double sizeY, int Beamlength,
               COLORREF colorSun, COLORREF colorCloud, COLORREF colorEye)
