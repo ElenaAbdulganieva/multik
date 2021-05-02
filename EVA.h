@@ -403,6 +403,25 @@ void DrawBird (int x, int y, double sizeX, double sizeY, int PositionWing,
     txPolygon (body, 4);
     }
 
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует собаку
+//!
+//! @param x         координата основания шеи
+//! @param y         координата основания шеи
+//! @param sizeX     Размер собаки <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY     Размер собаки <i>(коэффициент сжатия по вертикали)</i>
+//! @param TailShift Величина изменения кончика хвоста
+//! @param EarShift  Величина изменения кончика уха
+//! @param colorBody Цвет туловища
+//! @param colorHead Цвет головы
+//! @param colorTail Цвет хвоста
+//!
+//! @par             Пример использования:
+//! @code
+//!                  DrawDog (700, 470, 1, 1, 2, 5, TX_BLACK, TX_WHITE, TX_GREY);
+//! @endcode
+//}----------------------------------------------------------------------------
 void DrawDog (int x, int y, double sizeX, double sizeY, int TailShift, int EarShift,
               COLORREF colorBody, COLORREF colorHead, COLORREF colorTail)
     {
