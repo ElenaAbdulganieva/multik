@@ -472,6 +472,25 @@ void DrawDog (int x, int y, double sizeX, double sizeY, int TailShift, int EarSh
     txPolygon (lapa, 7);
     }
 
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует цветок
+//!
+//! @param x           координата основания стебля
+//! @param y           координата основания стебля
+//! @param sizeX       Размер цветка <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY       Размер цветка <i>(коэффициент сжатия по вертикали)</i>
+//! @param Disclosure  Величина раскрытия цветка
+//! @param UpSheet     Величина изменения поднятия листа
+//! @param Swinging    Величина раскачивания цветка
+//! @param colorFlower Цвет бутона
+//!
+//! @par               Пример использования:
+//! @code
+//!                    DrawFlower (100, 300, 3, 3, 5, 3, 10, TX_RED);
+//! @endcode
+//}----------------------------------------------------------------------------
+
 void DrawFlower (int x, int y, double sizeX, double sizeY, int Disclosure,
                  int UpSheet, int Swinging, COLORREF colorFlower)
     {
