@@ -2,8 +2,6 @@
 
 # include "TXlib.h"
 
-const int TIME = 1;
-
 void DrawMotorWay      (int x, int y, double sizeX, double sizeY, int width,
                         COLORREF colorWay, COLORREF colorBand);
 
@@ -50,12 +48,11 @@ void City              (int x, int y, double sizeX, double sizeY, COLORREF color
 //! @param colorWay  Цвет дороги
 //! @param colorBand Цвет полос
 //!
-//! @par
+//! @par             Пример использования:
 //! @code
 //!                  DrawMotorWay (0, 400, 1, 1, 10, TX_DARKGREY, TX_WHITE);
 //! @endcode
 //}----------------------------------------------------------------------------
-
 
 void DrawMotorWay (int x, int y, double sizeX, double sizeY, int width,
                    COLORREF colorWay, COLORREF colorBand)
@@ -86,7 +83,7 @@ void DrawMotorWay (int x, int y, double sizeX, double sizeY, int width,
 //!
 //! @warning         Параметры для получения красного (1, 0, 0), желтого (1, 1, 0), зеленого (0, 1, 0)
 //!
-//! @par
+//! @par             Пример использования:
 //! @code
 //!                  DrawTrafficlights (95, 200, 1, 1, TX_DARKGREY, 255, 0, 0);
 //! @endcode
@@ -104,6 +101,25 @@ void DrawTrafficlights (int x, int y, double sizeX, double sizeY,
     txSetFillColor (RGB (Red, Green, Blue));
     txCircle (x + 25 * sizeX, y +  25 * sizeY, 15 * sizeX);
     }
+
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует автомобиль
+//!
+//! @param x             координата левого верхнего угла автомобиля
+//! @param y             координата левого верхнего угла автомобиля
+//! @param sizeX         Размер автомобиля <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY         Размер автомобиля <i>(коэффициент сжатия по вертикали)</i>
+//! @param RWheel        Радиус колеса
+//! @param colorCar      Цвет автомобиля
+//! @param colorWheel    Цвет колеса
+//! @param DistanceWheel Изменение расстояния между колесами <i>(по умолчанию 150 пик)</i>
+//!
+//! @par                 Пример использования:
+//! @code
+//!                      DrawCar (800, 375, 1, 1, 20, TX_RED, TX_ORANGE, 20);
+//! @endcode
+//}----------------------------------------------------------------------------
 
 void DrawCar (int x, int y, double sizeX, double sizeY,int RWheel,
               COLORREF colorCar, COLORREF colorWheel, int DistanceWheel)
@@ -126,6 +142,26 @@ void DrawCar (int x, int y, double sizeX, double sizeY,int RWheel,
     txCircle (x +  50 * sizeX + DistanceWheel, y + 50 * sizeY, 10 * sizeY);
     txCircle (x + 200 * sizeX - DistanceWheel, y + 50 * sizeY, 10 * sizeY);
     }
+
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует девочку
+//!
+//! @param x             координата основания шеи
+//! @param y             координата основания шеи
+//! @param sizeX         Размер девочки <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY         Размер девочки <i>(коэффициент сжатия по вертикали)</i>
+//! @param HandUp        Величина изменения подъема рук
+//! @param LegRight      Величина изменения положения правой ноги
+//! @param colorDress    Цвет платья
+//! @param colorLipstick Цвет помады
+//! @param colorEye      Цвет глаз
+//!
+//! @par                 Пример использования:
+//! @code
+//!                      DrawGirl (175, 275, 1, 1, 10, 5, TX_RED, TX_GREEN, TX_BLACK);
+//! @endcode
+//}----------------------------------------------------------------------------
 
 void DrawGirl (int x, int y, double sizeX, double sizeY, int HandUp, int LegRight,
                COLORREF colorDress, COLORREF colorLipstick, COLORREF colorEye)
@@ -153,6 +189,28 @@ void DrawGirl (int x, int y, double sizeX, double sizeY, int HandUp, int LegRigh
                       {x + 25 * sizeX, y + 88 * sizeY}, {x, y}};
     txPolygon (dress, 3);
     }
+
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует фруктовое дерево
+//!
+//! @param x           координата основания ствола
+//! @param y           координата основания ствола
+//! @param sizeX       Размер дерева <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY       Размер дерева <i>(коэффициент сжатия по вертикали)</i>
+//! @param DFruit      Радиус фрукта
+//! @param WobbleCrown Величина колебания кроны дерева
+//! @param HeightTrunk Величина изменения высоты ствола
+//! @param HeightCrown Величина изменения высоты кроны
+//! @param colorFruit1 Цвет фрукта
+//! @param colorFruit2 Цвет фрукта
+//! @param colorFruit3 Цвет фрукта
+//!
+//! @par               Пример использования:
+//! @code
+//!                    DrawTree (200, 300, 1, 1, 8, 5, 0, 5, TX_RED, TX_ORANGE, TX_YELLOW);
+//! @endcode
+//}----------------------------------------------------------------------------
 
 void DrawTree (int x, int y, double sizeX, double sizeY, int DFruit,
                int WobbleCrown, int HeightTrunk, int HeightCrown,
@@ -189,6 +247,23 @@ void DrawTree (int x, int y, double sizeX, double sizeY, int DFruit,
     txCircle (x              + WobbleCrown, y - 175 * sizeY, DFruit * sizeY);
     }
 
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует завод
+//!
+//! @param x            координата левого нижнего угла здания
+//! @param y            координата левого нижнего угла здания
+//! @param sizeX        Размер здания <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY        Размер здания <i>(коэффициент сжатия по вертикали)</i>
+//! @param PipeHeight   Величина изменения высоты трубы
+//! @param colorFactory Цвет здания
+//!
+//! @par                Пример использования:
+//! @code
+//!                     DrawFactory (100, 200, 1, 1, 3, TX_GREY);
+//! @endcode
+//}----------------------------------------------------------------------------
+
 void DrawFactory (int x, int y, double sizeX, double sizeY, int PipeHeight,
                   COLORREF colorFactory)
     {
@@ -223,6 +298,25 @@ void DrawFactory (int x, int y, double sizeX, double sizeY, int PipeHeight,
     txPolygon (factory, 26);
     }
 
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует солнце и облака
+//!
+//! @param x          координата центра солнца
+//! @param y          координата центра солнца
+//! @param sizeX      Размер солнца <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY      Размер солнца <i>(коэффициент сжатия по вертикали)</i>
+//! @param Beamlength Длина луча
+//! @param сolorSun   Цвет солнца
+//! @param colorCloud Цвет облака
+//! @param colorEye   Цвет глаз
+//!
+//! @par              Пример использования:
+//! @code
+//!                   DrawSun (500, 50, 1, 1, 10, TX_YELLOW, TX_BLUE, TX_WHITE);
+//! @endcode
+//}----------------------------------------------------------------------------
+
 void DrawSun (int x, int y, double sizeX, double sizeY, int Beamlength,
               COLORREF colorSun, COLORREF colorCloud, COLORREF colorEye)
     {
@@ -255,6 +349,25 @@ void DrawSun (int x, int y, double sizeX, double sizeY, int Beamlength,
     txSetFillColor (RGB(0, 100, 255));
     txEllipse (x - 150 * sizeX, y + 25 * sizeY, x - 50 * sizeX,  y + 75 * sizeY);
     }
+
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует птицу
+//!
+//! @param x            координата основания шеи
+//! @param y            координата основания шеи
+//! @param sizeX        Размер птицы <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY        Размер птицы <i>(коэффициент сжатия по вертикали)</i>
+//! @param PositionWing Величина изменения подъема крыла
+//! @param colorWing    Цвет крыльев
+//! @param colorBody    Цвет тела
+//! @param colorHead    Цвет головы
+//!
+//! @par              Пример использования:
+//! @code
+//!                   DrawBird (800, 175, 1, 1, 5, TX_ORANGE, TX_WHITE, TX_WHITE);
+//! @endcode
+//}----------------------------------------------------------------------------
 
 void DrawBird (int x, int y, double sizeX, double sizeY, int PositionWing,
                COLORREF colorWing, COLORREF colorBody, COLORREF colorHead)
@@ -289,6 +402,25 @@ void DrawBird (int x, int y, double sizeX, double sizeY, int PositionWing,
     txPolygon (body, 4);
     }
 
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует собаку
+//!
+//! @param x         координата основания шеи
+//! @param y         координата основания шеи
+//! @param sizeX     Размер собаки <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY     Размер собаки <i>(коэффициент сжатия по вертикали)</i>
+//! @param TailShift Величина изменения кончика хвоста
+//! @param EarShift  Величина изменения кончика уха
+//! @param colorBody Цвет туловища
+//! @param colorHead Цвет головы
+//! @param colorTail Цвет хвоста
+//!
+//! @par             Пример использования:
+//! @code
+//!                  DrawDog (700, 470, 1, 1, 2, 5, TX_BLACK, TX_WHITE, TX_GREY);
+//! @endcode
+//}----------------------------------------------------------------------------
 void DrawDog (int x, int y, double sizeX, double sizeY, int TailShift, int EarShift,
               COLORREF colorBody, COLORREF colorHead, COLORREF colorTail)
     {
@@ -339,6 +471,25 @@ void DrawDog (int x, int y, double sizeX, double sizeY, int TailShift, int EarSh
     txPolygon (lapa, 7);
     }
 
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует цветок
+//!
+//! @param x           координата основания стебля
+//! @param y           координата основания стебля
+//! @param sizeX       Размер цветка <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY       Размер цветка <i>(коэффициент сжатия по вертикали)</i>
+//! @param Disclosure  Величина раскрытия цветка
+//! @param UpSheet     Величина изменения поднятия листа
+//! @param Swinging    Величина раскачивания цветка
+//! @param colorFlower Цвет бутона
+//!
+//! @par               Пример использования:
+//! @code
+//!                    DrawFlower (100, 300, 3, 3, 5, 3, 10, TX_RED);
+//! @endcode
+//}----------------------------------------------------------------------------
+
 void DrawFlower (int x, int y, double sizeX, double sizeY, int Disclosure,
                  int UpSheet, int Swinging, COLORREF colorFlower)
     {
@@ -372,6 +523,22 @@ void DrawFlower (int x, int y, double sizeX, double sizeY, int Disclosure,
                     {x - 1 * sizeX + Swinging             , y -  6 * sizeY}};
     txPolygon (bud, 10);
     }
+
+//{----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//! Рисует очертания города
+//!
+//! @param x         координата левого нижнего угла здания
+//! @param y         координата левого нижнего угла здания
+//! @param sizeX     Размер города <i>(коэффициент сжатия по горизонтали)</i>
+//! @param sizeY     Размер города <i>(коэффициент сжатия по вертикали)</i>
+//! @param colorCity Цвет зданий
+//!
+//! @par             Пример использования:
+//! @code
+//!                  City (0, 0, 1, 1, TX_GREY);
+//! @endcode
+//}----------------------------------------------------------------------------
 
 void City (int x, int y, double sizeX, double sizeY, COLORREF colorCity)
     {
