@@ -1,0 +1,417 @@
+\hypertarget{_e_v_a_8h}{}\doxysection{Файл EVA.\+h}
+\label{_e_v_a_8h}\index{EVA.h@{EVA.h}}
+{\ttfamily \#include \char`\"{}TXlib.\+h\char`\"{}}\newline
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_e_v_a_8h_a9db25ec22973ef9a5099f14971cf0ff3}{City}} (int x, int y, double sizeX, double sizeY, COLORREF color\+City)
+\item 
+void \mbox{\hyperlink{_e_v_a_8h_aa69db2a0685add4cd9553623a8738826}{Draw\+Bird}} (int x, int y, double sizeX, double sizeY, int Position\+Wing, COLORREF color\+Wing, COLORREF color\+Body, COLORREF color\+Head)
+\item 
+void \mbox{\hyperlink{_e_v_a_8h_a1c240bcfea9d7943b01587715d58426d}{Draw\+Car}} (int x, int y, double sizeX, double sizeY, int RWheel, COLORREF color\+Car, COLORREF color\+Wheel, int Distance\+Wheel)
+\item 
+void \mbox{\hyperlink{_e_v_a_8h_a85cc7b7563db0974c9b6e8ed384a97df}{Draw\+Dog}} (int x, int y, double sizeX, double sizeY, int Tail\+Shift, int Ear\+Shift, COLORREF color\+Body, COLORREF color\+Head, COLORREF color\+Tail)
+\item 
+void \mbox{\hyperlink{_e_v_a_8h_ae461d6d9f971cad25468d1bf4ca1d836}{Draw\+Factory}} (int x, int y, double sizeX, double sizeY, int Pipe\+Height, COLORREF color\+Factory)
+\item 
+void \mbox{\hyperlink{_e_v_a_8h_aaa4e1061194b84095e3ecc030f829df5}{Draw\+Flower}} (int x, int y, double sizeX, double sizeY, int Disclosure, int Up\+Sheet, int Swinging, COLORREF color\+Flower)
+\item 
+void \mbox{\hyperlink{_e_v_a_8h_ad953ced69625dd0e1059e031848e5938}{Draw\+Girl}} (int x, int y, double sizeX, double sizeY, int Hand\+Up, int Leg\+Right, COLORREF color\+Dress, COLORREF color\+Lipstick, COLORREF color\+Eye)
+\item 
+void \mbox{\hyperlink{_e_v_a_8h_ad00944602e036e44737b83097f3af30b}{Draw\+Motor\+Way}} (int x, int y, double sizeX, double sizeY, int width, COLORREF color\+Way, COLORREF color\+Band)
+\item 
+void \mbox{\hyperlink{_e_v_a_8h_a14d3b196337608c97b1a1a7bdb521359}{Draw\+Sun}} (int x, int y, double sizeX, double sizeY, int Beamlength, COLORREF color\+Sun, COLORREF color\+Cloud, COLORREF color\+Eye)
+\item 
+void \mbox{\hyperlink{_e_v_a_8h_a8aff1a5af8b711d55d166e3587382946}{Draw\+Trafficlights}} (int x, int y, double sizeX, double sizeY, COLORREF color\+Main, int Red, int Green, int Blue)
+\item 
+void \mbox{\hyperlink{_e_v_a_8h_ad5c41140161a45a45eb4ad65655cff1f}{Draw\+Tree}} (int x, int y, double sizeX, double sizeY, int DFruit, int Wobble\+Crown, int Height\+Trunk, int Height\+Crown, COLORREF color\+Fruit1, COLORREF color\+Fruit2, COLORREF color\+Fruit3)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{_e_v_a_8h_a9db25ec22973ef9a5099f14971cf0ff3}\label{_e_v_a_8h_a9db25ec22973ef9a5099f14971cf0ff3}} 
+\index{EVA.h@{EVA.h}!City@{City}}
+\index{City@{City}!EVA.h@{EVA.h}}
+\doxysubsubsection{\texorpdfstring{City()}{City()}}
+{\footnotesize\ttfamily void City (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{sizeX,  }\item[{double}]{sizeY,  }\item[{COLORREF}]{color\+City }\end{DoxyParamCaption})}
+
+Рисует очертания города
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & координата левого нижнего угла здания \\
+\hline
+{\em y} & координата левого нижнего угла здания \\
+\hline
+{\em sizeX} & Размер города {\itshape (коэффициент сжатия по горизонтали)} \\
+\hline
+{\em sizeY} & Размер города {\itshape (коэффициент сжатия по вертикали)} \\
+\hline
+{\em color\+City} & Цвет зданий\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Пример использования\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_v_a_8h_a9db25ec22973ef9a5099f14971cf0ff3}{City}} (0, 0, 1, 1, TX\_GREY);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{_e_v_a_8h_aa69db2a0685add4cd9553623a8738826}\label{_e_v_a_8h_aa69db2a0685add4cd9553623a8738826}} 
+\index{EVA.h@{EVA.h}!DrawBird@{DrawBird}}
+\index{DrawBird@{DrawBird}!EVA.h@{EVA.h}}
+\doxysubsubsection{\texorpdfstring{DrawBird()}{DrawBird()}}
+{\footnotesize\ttfamily void Draw\+Bird (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{sizeX,  }\item[{double}]{sizeY,  }\item[{int}]{Position\+Wing,  }\item[{COLORREF}]{color\+Wing,  }\item[{COLORREF}]{color\+Body,  }\item[{COLORREF}]{color\+Head }\end{DoxyParamCaption})}
+
+Рисует птицу
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & координата основания шеи \\
+\hline
+{\em y} & координата основания шеи \\
+\hline
+{\em sizeX} & Размер птицы {\itshape (коэффициент сжатия по горизонтали)} \\
+\hline
+{\em sizeY} & Размер птицы {\itshape (коэффициент сжатия по вертикали)} \\
+\hline
+{\em Position\+Wing} & Величина изменения подъема крыла \\
+\hline
+{\em color\+Wing} & Цвет крыльев \\
+\hline
+{\em color\+Body} & Цвет тела \\
+\hline
+{\em color\+Head} & Цвет головы\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Пример использования\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_v_a_8h_aa69db2a0685add4cd9553623a8738826}{DrawBird}} (800, 175, 1, 1, 5, TX\_ORANGE, TX\_WHITE, TX\_WHITE);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{_e_v_a_8h_a1c240bcfea9d7943b01587715d58426d}\label{_e_v_a_8h_a1c240bcfea9d7943b01587715d58426d}} 
+\index{EVA.h@{EVA.h}!DrawCar@{DrawCar}}
+\index{DrawCar@{DrawCar}!EVA.h@{EVA.h}}
+\doxysubsubsection{\texorpdfstring{DrawCar()}{DrawCar()}}
+{\footnotesize\ttfamily void Draw\+Car (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{sizeX,  }\item[{double}]{sizeY,  }\item[{int}]{RWheel,  }\item[{COLORREF}]{color\+Car,  }\item[{COLORREF}]{color\+Wheel,  }\item[{int}]{Distance\+Wheel }\end{DoxyParamCaption})}
+
+Рисует автомобиль
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & координата левого верхнего угла автомобиля \\
+\hline
+{\em y} & координата левого верхнего угла автомобиля \\
+\hline
+{\em sizeX} & Размер автомобиля {\itshape (коэффициент сжатия по горизонтали)} \\
+\hline
+{\em sizeY} & Размер автомобиля {\itshape (коэффициент сжатия по вертикали)} \\
+\hline
+{\em RWheel} & Радиус колеса \\
+\hline
+{\em color\+Car} & Цвет автомобиля \\
+\hline
+{\em color\+Wheel} & Цвет колеса \\
+\hline
+{\em Distance\+Wheel} & Изменение расстояния между колесами {\itshape (по умолчанию 150 пик)}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Пример использования\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_v_a_8h_a1c240bcfea9d7943b01587715d58426d}{DrawCar}} (800, 375, 1, 1, 20, TX\_RED, TX\_ORANGE, 20);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{_e_v_a_8h_a85cc7b7563db0974c9b6e8ed384a97df}\label{_e_v_a_8h_a85cc7b7563db0974c9b6e8ed384a97df}} 
+\index{EVA.h@{EVA.h}!DrawDog@{DrawDog}}
+\index{DrawDog@{DrawDog}!EVA.h@{EVA.h}}
+\doxysubsubsection{\texorpdfstring{DrawDog()}{DrawDog()}}
+{\footnotesize\ttfamily void Draw\+Dog (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{sizeX,  }\item[{double}]{sizeY,  }\item[{int}]{Tail\+Shift,  }\item[{int}]{Ear\+Shift,  }\item[{COLORREF}]{color\+Body,  }\item[{COLORREF}]{color\+Head,  }\item[{COLORREF}]{color\+Tail }\end{DoxyParamCaption})}
+
+Рисует собаку
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & координата основания шеи \\
+\hline
+{\em y} & координата основания шеи \\
+\hline
+{\em sizeX} & Размер собаки {\itshape (коэффициент сжатия по горизонтали)} \\
+\hline
+{\em sizeY} & Размер собаки {\itshape (коэффициент сжатия по вертикали)} \\
+\hline
+{\em Tail\+Shift} & Величина изменения кончика хвоста \\
+\hline
+{\em Ear\+Shift} & Величина изменения кончика уха \\
+\hline
+{\em color\+Body} & Цвет туловища \\
+\hline
+{\em color\+Head} & Цвет головы \\
+\hline
+{\em color\+Tail} & Цвет хвоста\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Пример использования\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_v_a_8h_a85cc7b7563db0974c9b6e8ed384a97df}{DrawDog}} (700, 470, 1, 1, 2, 5, TX\_BLACK, TX\_WHITE, TX\_GREY);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{_e_v_a_8h_ae461d6d9f971cad25468d1bf4ca1d836}\label{_e_v_a_8h_ae461d6d9f971cad25468d1bf4ca1d836}} 
+\index{EVA.h@{EVA.h}!DrawFactory@{DrawFactory}}
+\index{DrawFactory@{DrawFactory}!EVA.h@{EVA.h}}
+\doxysubsubsection{\texorpdfstring{DrawFactory()}{DrawFactory()}}
+{\footnotesize\ttfamily void Draw\+Factory (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{sizeX,  }\item[{double}]{sizeY,  }\item[{int}]{Pipe\+Height,  }\item[{COLORREF}]{color\+Factory }\end{DoxyParamCaption})}
+
+Рисует завод
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & координата левого нижнего угла здания \\
+\hline
+{\em y} & координата левого нижнего угла здания \\
+\hline
+{\em sizeX} & Размер здания {\itshape (коэффициент сжатия по горизонтали)} \\
+\hline
+{\em sizeY} & Размер здания {\itshape (коэффициент сжатия по вертикали)} \\
+\hline
+{\em Pipe\+Height} & Величина изменения высоты трубы \\
+\hline
+{\em color\+Factory} & Цвет здания\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Пример использования\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_v_a_8h_ae461d6d9f971cad25468d1bf4ca1d836}{DrawFactory}} (100, 200, 1, 1, 3, TX\_GREY);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{_e_v_a_8h_aaa4e1061194b84095e3ecc030f829df5}\label{_e_v_a_8h_aaa4e1061194b84095e3ecc030f829df5}} 
+\index{EVA.h@{EVA.h}!DrawFlower@{DrawFlower}}
+\index{DrawFlower@{DrawFlower}!EVA.h@{EVA.h}}
+\doxysubsubsection{\texorpdfstring{DrawFlower()}{DrawFlower()}}
+{\footnotesize\ttfamily void Draw\+Flower (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{sizeX,  }\item[{double}]{sizeY,  }\item[{int}]{Disclosure,  }\item[{int}]{Up\+Sheet,  }\item[{int}]{Swinging,  }\item[{COLORREF}]{color\+Flower }\end{DoxyParamCaption})}
+
+Рисует цветок
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & координата основания стебля \\
+\hline
+{\em y} & координата основания стебля \\
+\hline
+{\em sizeX} & Размер цветка {\itshape (коэффициент сжатия по горизонтали)} \\
+\hline
+{\em sizeY} & Размер цветка {\itshape (коэффициент сжатия по вертикали)} \\
+\hline
+{\em Disclosure} & Величина раскрытия цветка \\
+\hline
+{\em Up\+Sheet} & Величина изменения поднятия листа \\
+\hline
+{\em Swinging} & Величина раскачивания цветка \\
+\hline
+{\em color\+Flower} & Цвет бутона\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Пример использования\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_v_a_8h_aaa4e1061194b84095e3ecc030f829df5}{DrawFlower}} (100, 300, 3, 3, 5, 3, 10, TX\_RED);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{_e_v_a_8h_ad953ced69625dd0e1059e031848e5938}\label{_e_v_a_8h_ad953ced69625dd0e1059e031848e5938}} 
+\index{EVA.h@{EVA.h}!DrawGirl@{DrawGirl}}
+\index{DrawGirl@{DrawGirl}!EVA.h@{EVA.h}}
+\doxysubsubsection{\texorpdfstring{DrawGirl()}{DrawGirl()}}
+{\footnotesize\ttfamily void Draw\+Girl (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{sizeX,  }\item[{double}]{sizeY,  }\item[{int}]{Hand\+Up,  }\item[{int}]{Leg\+Right,  }\item[{COLORREF}]{color\+Dress,  }\item[{COLORREF}]{color\+Lipstick,  }\item[{COLORREF}]{color\+Eye }\end{DoxyParamCaption})}
+
+Рисует девочку
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & координата основания шеи \\
+\hline
+{\em y} & координата основания шеи \\
+\hline
+{\em sizeX} & Размер девочки {\itshape (коэффициент сжатия по горизонтали)} \\
+\hline
+{\em sizeY} & Размер девочки {\itshape (коэффициент сжатия по вертикали)} \\
+\hline
+{\em Hand\+Up} & Величина изменения подъема рук \\
+\hline
+{\em Leg\+Right} & Величина изменения положения правой ноги \\
+\hline
+{\em color\+Dress} & Цвет платья \\
+\hline
+{\em color\+Lipstick} & Цвет помады \\
+\hline
+{\em color\+Eye} & Цвет глаз\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Пример использования\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_v_a_8h_ad953ced69625dd0e1059e031848e5938}{DrawGirl}} (175, 275, 1, 1, 10, 5, TX\_RED, TX\_GREEN, TX\_BLACK);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{_e_v_a_8h_ad00944602e036e44737b83097f3af30b}\label{_e_v_a_8h_ad00944602e036e44737b83097f3af30b}} 
+\index{EVA.h@{EVA.h}!DrawMotorWay@{DrawMotorWay}}
+\index{DrawMotorWay@{DrawMotorWay}!EVA.h@{EVA.h}}
+\doxysubsubsection{\texorpdfstring{DrawMotorWay()}{DrawMotorWay()}}
+{\footnotesize\ttfamily void Draw\+Motor\+Way (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{sizeX,  }\item[{double}]{sizeY,  }\item[{int}]{width,  }\item[{COLORREF}]{color\+Way,  }\item[{COLORREF}]{color\+Band }\end{DoxyParamCaption})}
+
+Рисует дорогу и пешеходный переход
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & координата левого верхнего угла дороги \\
+\hline
+{\em y} & координата левого верхнего угла дороги \\
+\hline
+{\em sizeX} & Размер дороги {\itshape (коэффициент сжатия по горизонтали)} \\
+\hline
+{\em sizeY} & Размер дороги {\itshape (коэффициент сжатия по вертикали)} \\
+\hline
+{\em width} & Ширина полос \\
+\hline
+{\em color\+Way} & Цвет дороги \\
+\hline
+{\em color\+Band} & Цвет полос\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Пример использования\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_v_a_8h_ad00944602e036e44737b83097f3af30b}{DrawMotorWay}} (0, 400, 1, 1, 10, TX\_DARKGREY, TX\_WHITE);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{_e_v_a_8h_a14d3b196337608c97b1a1a7bdb521359}\label{_e_v_a_8h_a14d3b196337608c97b1a1a7bdb521359}} 
+\index{EVA.h@{EVA.h}!DrawSun@{DrawSun}}
+\index{DrawSun@{DrawSun}!EVA.h@{EVA.h}}
+\doxysubsubsection{\texorpdfstring{DrawSun()}{DrawSun()}}
+{\footnotesize\ttfamily void Draw\+Sun (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{sizeX,  }\item[{double}]{sizeY,  }\item[{int}]{Beamlength,  }\item[{COLORREF}]{color\+Sun,  }\item[{COLORREF}]{color\+Cloud,  }\item[{COLORREF}]{color\+Eye }\end{DoxyParamCaption})}
+
+Рисует солнце и облака
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & координата центра солнца \\
+\hline
+{\em y} & координата центра солнца \\
+\hline
+{\em sizeX} & Размер солнца {\itshape (коэффициент сжатия по горизонтали)} \\
+\hline
+{\em sizeY} & Размер солнца {\itshape (коэффициент сжатия по вертикали)} \\
+\hline
+{\em Beamlength} & Длина луча \\
+\hline
+{\em сolor\+Sun} & Цвет солнца \\
+\hline
+{\em color\+Cloud} & Цвет облака \\
+\hline
+{\em color\+Eye} & Цвет глаз\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Пример использования\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_v_a_8h_a14d3b196337608c97b1a1a7bdb521359}{DrawSun}} (500, 50, 1, 1, 10, TX\_YELLOW, TX\_BLUE, TX\_WHITE);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{_e_v_a_8h_a8aff1a5af8b711d55d166e3587382946}\label{_e_v_a_8h_a8aff1a5af8b711d55d166e3587382946}} 
+\index{EVA.h@{EVA.h}!DrawTrafficlights@{DrawTrafficlights}}
+\index{DrawTrafficlights@{DrawTrafficlights}!EVA.h@{EVA.h}}
+\doxysubsubsection{\texorpdfstring{DrawTrafficlights()}{DrawTrafficlights()}}
+{\footnotesize\ttfamily void Draw\+Trafficlights (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{sizeX,  }\item[{double}]{sizeY,  }\item[{COLORREF}]{color\+Main,  }\item[{int}]{Red,  }\item[{int}]{Green,  }\item[{int}]{Blue }\end{DoxyParamCaption})}
+
+Рисует светофор с одним глазом
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & координата левого верхнего угла светофора \\
+\hline
+{\em y} & координата левого верхнего угла светофора \\
+\hline
+{\em sizeX} & Размер светофора {\itshape (коэффициент сжатия по горизонтали)} \\
+\hline
+{\em sizeY} & Размер светофора {\itshape (коэффициент сжатия по вертикали)} \\
+\hline
+{\em color\+Main} & Цвет светофора \\
+\hline
+{\em Red} & Интенсивность красного {\itshape (в диапазоне от 0 до 255)} \\
+\hline
+{\em Green} & Интенсивность зеленого {\itshape (в диапазоне от 0 до 255)} \\
+\hline
+{\em Blue} & Интенсивность синего {\itshape (в диапазоне от 0 до 255)}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Предупреждения}
+Параметры для получения красного (1, 0, 0), желтого (1, 1, 0), зеленого (0, 1, 0)
+\end{DoxyWarning}
+\begin{DoxyParagraph}{Пример использования\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_v_a_8h_a8aff1a5af8b711d55d166e3587382946}{DrawTrafficlights}} (95, 200, 1, 1, TX\_DARKGREY, 255, 0, 0);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{_e_v_a_8h_ad5c41140161a45a45eb4ad65655cff1f}\label{_e_v_a_8h_ad5c41140161a45a45eb4ad65655cff1f}} 
+\index{EVA.h@{EVA.h}!DrawTree@{DrawTree}}
+\index{DrawTree@{DrawTree}!EVA.h@{EVA.h}}
+\doxysubsubsection{\texorpdfstring{DrawTree()}{DrawTree()}}
+{\footnotesize\ttfamily void Draw\+Tree (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{sizeX,  }\item[{double}]{sizeY,  }\item[{int}]{DFruit,  }\item[{int}]{Wobble\+Crown,  }\item[{int}]{Height\+Trunk,  }\item[{int}]{Height\+Crown,  }\item[{COLORREF}]{color\+Fruit1,  }\item[{COLORREF}]{color\+Fruit2,  }\item[{COLORREF}]{color\+Fruit3 }\end{DoxyParamCaption})}
+
+Рисует фруктовое дерево
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & координата основания ствола \\
+\hline
+{\em y} & координата основания ствола \\
+\hline
+{\em sizeX} & Размер дерева {\itshape (коэффициент сжатия по горизонтали)} \\
+\hline
+{\em sizeY} & Размер дерева {\itshape (коэффициент сжатия по вертикали)} \\
+\hline
+{\em DFruit} & Радиус фрукта \\
+\hline
+{\em Wobble\+Crown} & Величина колебания кроны дерева \\
+\hline
+{\em Height\+Trunk} & Величина изменения высоты ствола \\
+\hline
+{\em Height\+Crown} & Величина изменения высоты кроны \\
+\hline
+{\em color\+Fruit1} & Цвет фрукта \\
+\hline
+{\em color\+Fruit2} & Цвет фрукта \\
+\hline
+{\em color\+Fruit3} & Цвет фрукта\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Пример использования\+:}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_e_v_a_8h_ad5c41140161a45a45eb4ad65655cff1f}{DrawTree}} (200, 300, 1, 1, 8, 5, 0, 5, TX\_RED, TX\_ORANGE, TX\_YELLOW);}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
