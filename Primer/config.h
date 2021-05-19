@@ -1,0 +1,10 @@
+const COLORREF MY_FIR_TREE     = RGB (32,  203, 16 );
+      COLORREF MY_FACE         = RGB (239, 228, 176);
+      COLORREF MY_BROWN        = RGB (128,  64, 0  );
+      COLORREF MY_MOUNTAIN     = RGB (128,  64, 0  );
+      COLORREF MY_LIGHT_RED    = RGB (255,   0, 0  );
+      COLORREF MY_LIGHT_GREEN  = RGB (0,   255, 0  );
+      COLORREF MY_GREEN        = RGB (0,   170, 0  );
+      COLORREF MY_TABLE        = RGB (185, 122, 87 );
+      COLORREF MY_ROSE         = RGB (255, 128, 128);
+      COLORREF MY_LIGHT_BLUE   = RGB (153, 234, 230);
